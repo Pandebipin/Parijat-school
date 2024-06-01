@@ -1,0 +1,61 @@
+
+.box2{
+  background-image: url("https://students-residents.aamc.org/sites/default/files/d/5/93-gettyimages-750x325-2.jpg__750x325_q85_crop-smart_subsampling-2_upscale%402x.jpg");
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  box-shadow: 5px 7px 5px 5px rgba(0, 0, 0, 0.2);
+  animation: animate 2s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+.box{
+  background-image: url("https://www.swcciowa.edu/images/High_School/HighSchoolMainPage.jpg");
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  box-shadow: 5px 7px 5px 5px rgba(0, 0, 0, 0.2);
+  animation: animate 2s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+@keyframes animate {
+  0%{
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50%{
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  50%{
+    border-radius:  60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+.rotate{
+  animation: rotate 2s ease-in-out infinite;
+ 
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+
+}
+.bg-img{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)), url("https://www.pukekohehigh.school.nz/wp-content/uploads/2020/04/200304_370-scaled.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.font{
+  font-family:"Courgette", cursive;
+  
+}
