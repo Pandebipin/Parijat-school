@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAcKHDHTYjAoxe9Dksr-Nshhwj3xrwcj0E",
+  apiKey: import.meta.env.VITE_MY_KEY,
   authDomain: "test-update-5a9c2.firebaseapp.com",
   projectId: "test-update-5a9c2",
   storageBucket: "test-update-5a9c2.appspot.com",
