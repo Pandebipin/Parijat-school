@@ -7,19 +7,24 @@ import { FaCaretRight } from "react-icons/fa";
 import Slider from "../Components/Slider";
 import AddItems from "./Additems";
 import AddTeacherInfo from "../Components/AddTeacherInfo";
-import Teacherbio from "../Components/Teacherbio";
-import Blogposts from "./Blogposts";
 import Testomonial from "../Components/testomonial";
 import { useTranslation } from "react-i18next";
-
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogs, selectBuckets } from "../Store/bucketSlice";
 import { useNavigate } from "react-router-dom";
+import { fetchTeachers, selectAllTeachers } from "../Store/teacherInfoSlice";
+import Contentmodal from "../Components/Contentmodal";
+import Addmodal from "../Components/Addmodal";
 
 function Home() {
   const Blogs = useSelector(selectBuckets);
 
   const dispatch = useDispatch();
+  const teachers = useSelector(selectAllTeachers);
+
+  useEffect(() => {
+    dispatch(fetchTeachers());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchBlogs());
@@ -54,7 +59,8 @@ function Home() {
     });
   };
   const { t } = useTranslation();
-  const { line1, line2, line3, line4, line5, line6, line7 } = t("description");
+  const { line1, line2, line3, line4, line5, line6, line7, line11 } =
+    t("description");
   return (
     <main className="max-w-[1900px]">
       <div className="page2 z-9 flex flex-col flex-wrap p-5 bg-[#FFFFFF]">
@@ -246,7 +252,10 @@ function Home() {
             {line7}
           </h2>
           <div className="pt-4">
-            <button className="px-3 py-1 border border-blue-500 bg-cyan-400 text-white rounded-md shadow-sm">
+            <button
+              onClick={() => navigate("/contact")}
+              className="px-3 py-1 border border-blue-500 bg-cyan-400 text-white rounded-md shadow-sm"
+            >
               {t("greetings5")}
             </button>
           </div>
@@ -257,9 +266,16 @@ function Home() {
         <Testomonial />
       </div>
       <div className="page-8 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
-        <div className="flex justify-evenly w-full">
-          <h1>rescent blogs</h1>
-          <h1>view more</h1>
+        <div className="flex justify-between p-4 w-full">
+          <h1 className="text-gray-800 text-xl border-b-2 border-gray-200">
+            rescent blogs
+          </h1>
+          <h1
+            className="text-gray-800 text-xl cursor-pointer"
+            onClick={() => navigate("/blogposts")}
+          >
+            view more
+          </h1>
         </div>
         <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
           {Blogs.slice(0, 4).map((blog) => (
@@ -306,11 +322,71 @@ function Home() {
           ))}
         </div>
       </div>
-      <div className="page-9 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
-        <AddItems />
-        <AddTeacherInfo />
-        <Teacherbio />
-        <Blogposts />
+      <div className="page-9  w-full min-h-[60vh] gap-7 flex flex-col justify-center p-4">
+        <div className="flex justify-between p-4 w-full">
+          <h1 className="text-gray-800 text-2xl border-b-2 border-gray-200">
+            our Teachers
+          </h1>
+
+          <h1
+            className="text-gray-800 text-2xl cursor-pointer"
+            onClick={() => navigate("/allteachers")}
+          >
+            view more
+          </h1>
+        </div>
+        <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+          {teachers.slice(0, 4).map((teacher) => (
+            <div key={teacher.id} className="bg-white p-4 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center">
+                <img
+                  className="w-32 h-32 rounded-full object-cover mb-4"
+                  src={teacher.url}
+                  alt={teacher.teachername}
+                />
+                <h3 className="text-xl font-semibold mb-2">
+                  Name:{teacher.teachername}
+                </h3>
+                <p className="text-gray-700 mb-2">
+                  Qualification:{teacher.qualification}
+                </p>
+                <p className="text-gray-500 mb-2">
+                  Experience: {teacher.experience} years
+                </p>
+                <p className="text-gray-500">Age: {teacher.age}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="page11 bg-gray-300 w-full min-h-[60vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
+        <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
+          <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col gap-3 p-4">
+            <img
+              className="rotate w-20 h-20"
+              src="https://samriddhischool.edu.np/static/media/target.c5c449ad0d30cdde8c8988f9b06de9de.svg"
+              alt=""
+            />
+            <h1 className="text-gray-800 flex flex-start pb-2 font-bold text-2xl capitalize ">
+              {t("greetings10")}
+            </h1>
+            <p className="text-sm tracking-wide text-gray-600 md:text-md font-serif lg:text-lg xl:text-lg text-start align-center">
+              {line11}
+            </p>
+          </div>
+          <div className="right flex flex-start justify-center ">
+            <div className="imagebox">
+              <img
+                className="h-[400px] w-[500px] object-cover mix-blend-multiply rounded-lg"
+                src="https://scontent.fbwa5-1.fna.fbcdn.net/v/t39.30808-6/432773669_471666571885744_666171203973380415_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=lMZuIzbJ2coQ7kNvgHCaWob&_nc_ht=scontent.fbwa5-1.fna&oh=00_AYCMXUTjC_qNz34cxNw9W0xx4H1O_yJ9YmkapmwQlBN0sg&oe=6661ABD5"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="page-10 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
+        <Contentmodal />
       </div>
     </main>
   );

@@ -23,6 +23,7 @@ i18n
           greetings7: "Withedrawl procedure",
           greetings8: "  For Pre-school",
           greetings9: "For Grade I to Grade VII",
+          greetings10: "message from our principal",
           values1: "respect",
           values2: "Service",
           values3: "Excellence",
@@ -56,6 +57,8 @@ i18n
               "Students who passed the SEE or equivalent with required criteria are eligible for admissions to the grade XI program. A strict admission process is in place to uphold the school’s tradition of excellence in academic, the arts and athletics. Faculty and authorities share the responsibility for student selection. Student selection is based on academic and non-academic considerations. Admission criteria includes scholastic performance, test scores in entrance examinations and reports of demonstrated talents and interests.",
             line10:
               " One month’s written notice, in the prescribed form conveying the intention of withdrawal of the child should be submitted to the school authorities. If the application is received in the school office after the first week of the month, one month’s fees, in lieu of notice, will  be charged.",
+            line11:
+              "Welcome to our school, where every student is encouraged to achieve excellence, embrace curiosity, and grow in a supportive community. Together, we strive for a brighter future.",
           },
         },
       },
@@ -104,6 +107,8 @@ i18n
               "विद्यार्थीहरू जो आवश्यक मापदण्डसहित SEE वा सो सरह उत्तीर्ण भएका छन्, कक्षा ११ को कार्यक्रमको लागि भर्ना गर्न योग्य छन्। शैक्षिक, कला र खेलकुदमा विद्यालयको उत्कृष्टता परम्परालाई कायम राख्न कडा भर्ना प्रक्रिया लागू गरिएको छ। विद्यार्थी छनोटको जिम्मेवारी शिक्षक र अधिकारीहरूले साझा गर्छन्। विद्यार्थी छनोट शैक्षिक र गैर-शैक्षिक विचारहरूको आधारमा गरिन्छ। भर्ना मापदण्डमा शैक्षिक प्रदर्शन, प्रवेश परीक्षामा प्राप्त अंकहरू र देखाएका प्रतिभा र रुचिका प्रतिवेदनहरू समावेश छन्।",
             line10:
               "बच्चाको फिर्तीको इरादा व्यक्त गर्ने एक महिनाको लिखित सूचना, तोकिएको फारममा, विद्यालय प्रशासनलाई बुझाउनुपर्छ। यदि निवेदन महिना सुरु भएको पहिलो सातापछि विद्यालय कार्यालयमा प्राप्त भयो भने, एक महिनाको शुल्क सूचना स्वरूप लिइनेछ।",
+            line11:
+              "हाम्रो विद्यालयमा स्वागत छ, जहाँ हरेक विद्यार्थीलाई उत्कृष्टता हासिल गर्न, जिज्ञासा अंगाल्न, र सहयोगी समुदायमा वृद्धि गर्न प्रोत्साहित गरिन्छ। सँगै, हामी उज्जवल भविष्यको लागि प्रयास गर्छौं।",
           },
         },
       },

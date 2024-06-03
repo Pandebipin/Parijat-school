@@ -16,6 +16,10 @@ import "./i18.js";
 import Addmission from "./Pages/Addmission.jsx";
 import Admindashboard from "./Pages/Admindashboard.jsx";
 import Form from "./Pages/Form.jsx";
+import Contactsection from "./Components/Contactsection.jsx";
+import Dancingsection from "./Components/Dancingsection.jsx";
+import Sports from "./Components/Sports.jsx";
+import Drawing from "./Components/Drawing.jsx";
 const App = React.lazy(() => import("./App.jsx"));
 const router = createBrowserRouter([
   {
@@ -55,12 +59,28 @@ const router = createBrowserRouter([
         element: <Singleblogpost />,
       },
       {
-        path: "addmision",
+        path: "/addmision",
         element: <Addmission />,
       },
       {
-        path: "admindashborad",
+        path: "/admindashborad",
         element: <Admindashboard />,
+      },
+      {
+        path: "/contact",
+        element: <Contactsection />,
+      },
+      {
+        path: "/teachers/Dance",
+        element: <Dancingsection />,
+      },
+      {
+        path: "/teachers/sports",
+        element: <Sports />,
+      },
+      {
+        path: "/teachers/Drawing",
+        element: <Drawing />,
       },
       {
         path: "Form",

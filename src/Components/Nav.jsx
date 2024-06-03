@@ -43,16 +43,15 @@ function Nav() {
       name: "Faculty",
       id: "2",
       children: [
-        { name: "Math" },
+        { name: "math" },
         { name: "science" },
-        { name: "English" },
-        { name: "Social" },
+        { name: "english" },
+        { name: "social" },
         { name: "nepali" },
         { name: "computer science" },
         { name: "opt math" },
-        { name: "health" },
+
         { name: "economics" },
-        { name: "Gk" },
       ],
     },
     {
@@ -95,15 +94,12 @@ function Nav() {
   });
   const navigate = useNavigate();
   return (
-    <nav className="w-full fixed z-10">
+    <nav className="w-full fixed z-10 top-0">
       <div className="nav  relative gap-8 flex justify-around items-center mb-2 w-full">
         <div className="flex gap-2">
-          <img
-            onClick={() => navigate("/")}
-            className="w-[90px] h-[80px] object-cover mix-blend-multiply cursor-pointer"
-            src="https://scontent.fktm19-1.fna.fbcdn.net/v/t39.30808-6/268089005_191938573137811_1623283280562633961_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ae1JA7tSSjUQ7kNvgG8NKCH&_nc_ht=scontent.fktm19-1.fna&oh=00_AYAEkgmORATXWFDgA0uqLqTQCH3ztwsQsCu93-tqvqiuyg&oe=665861B9"
-            alt="jj"
-          />
+          <h1 className="text-white text-xl" onClick={() => navigate("/")}>
+            Parijat
+          </h1>
         </div>
         <div className="nav font-bold text-md flex gap-4 items-center py-1 text-white cursor-pointer">
           <span
@@ -113,7 +109,7 @@ function Nav() {
             News|events
           </span>
           <span
-            onClick={() => navigate("addmision")}
+            onClick={() => navigate("/addmision")}
             className="lg:block  hidden cursor-pointer text-lg"
           >
             {" "}
@@ -128,7 +124,7 @@ function Nav() {
           </span>
           {isAdmin ? (
             <span
-              onClick={() => navigate("admindashborad")}
+              onClick={() => navigate("/admindashborad")}
               className="lg:block  hidden cursor-pointer text-lg"
             >
               {" "}
@@ -179,7 +175,9 @@ function Nav() {
                   <div className="py-2 ">
                     {elm.children.map((child, index) => (
                       <div key={index} className="text-white cursor-pointer">
-                        &#8627; {child.name}
+                        <Link to={`/teachers/${child.name}`}>
+                          &#8627; {child.name}
+                        </Link>
                       </div>
                     ))}
                   </div>

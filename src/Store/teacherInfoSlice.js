@@ -1,6 +1,12 @@
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  getFirestore,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 
 const initialState = {
@@ -28,8 +34,16 @@ export const fetchTeachers = createAsyncThunk(
 export const AddteacherInfo = createAsyncThunk(
   "teacher/AddteacherInfo",
   async (teacherdata, { rejectWithValue }) => {
-    const { teachername, experience, image, qualification, age, category } =
-      teacherdata;
+    const {
+      teachername,
+      experience,
+      image,
+      qualification,
+      age,
+      category,
+      number,
+      email,
+    } = teacherdata;
 
     try {
       const storage = getStorage();
@@ -46,6 +60,8 @@ export const AddteacherInfo = createAsyncThunk(
         experience,
         teachername,
         category,
+        number,
+        email,
       }).then(() => console.log("upload"));
 
       return {
@@ -55,10 +71,37 @@ export const AddteacherInfo = createAsyncThunk(
         url,
         qualification,
         age,
+        number,
+        email,
         category,
       };
     } catch (error) {
       return rejectWithValue("Failed to add teacher info");
+    }
+  }
+);
+export const removeTeacherInfo = createAsyncThunk(
+  "teacher/removeTeacherInfo",
+  async (teacherId, { rejectWithValue }) => {
+    try {
+      const firestoreref = getFirestore();
+      await deleteDoc(doc(firestoreref, "teacherinfo", teacherId));
+      return teacherId;
+    } catch (error) {
+      return rejectWithValue("Failed to delete teacher info");
+    }
+  }
+);
+export const updateTeacher = createAsyncThunk(
+  "teacher/updateteacher",
+  async ({ id, updatedata }, { rejectWithValue }) => {
+    try {
+      const firestoreref = getFirestore();
+      const teacherDocRef = doc(firestoreref, "teacherinfo", id);
+      await updateDoc(doc(teacherDocRef, updatedata));
+      return { id, ...updatedata };
+    } catch (error) {
+      return rejectWithValue("Failed to update teacher info");
     }
   }
 );
@@ -78,6 +121,23 @@ const teacherInfoSlice = createSlice({
       })
       .addCase(AddteacherInfo.rejected, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(removeTeacherInfo.fulfilled, (state, action) => {
+        state.teachers = state.teachers.filter(
+          (teacher) => teacher.id !== action.payload
+        );
+      })
+      .addCase(removeTeacherInfo.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(updateTeacher.fulfilled, (state, action) => {
+        const { id, ...updatedData } = action.payload;
+        const existingTeacherIndex = state.teachers.findIndex(
+          (teacher) => teacher.id === id
+        );
+        if (existingTeacherIndex >= 0) {
+          state.teachers[existingTeacherIndex] = { id, ...updatedData };
+        }
       });
   },
 });

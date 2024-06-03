@@ -10,9 +10,35 @@ function Signup() {
   const [profile, setProfile] = useState();
   const navigate = useNavigate();
 
+  const handleEmailchange = (email) => {
+    setEmail(email.target.value);
+    seterror("");
+  };
+
+  const handlePasswordchange = (email) => {
+    setPassword(email.target.value);
+    seterror("");
+  };
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  };
   const Login2 = async (e) => {
     e.preventDefault();
-
+    if (!validateEmail(email)) {
+      seterror("Invalid email format");
+    }
+    if (!validatePassword(password)) {
+      seterror(
+        "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character"
+      );
+    }
     await createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         alert("success");
@@ -20,6 +46,7 @@ function Signup() {
       })
       .catch((e) => {
         console.log(e);
+        seterror(e.message);
       });
   };
   return (
@@ -55,7 +82,7 @@ function Signup() {
               type="email"
               className="rounded p-2 w-full"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailchange}
             />
             <br />
 
@@ -65,7 +92,7 @@ function Signup() {
               placeholder="Enter your password"
               className="rounded p-2 w-full"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordchange}
             />
 
             <input

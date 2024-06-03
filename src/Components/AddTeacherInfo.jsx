@@ -9,6 +9,8 @@ function AddTeacherInfo() {
   const [age, setAge] = useState(0);
   const [experience, setExperience] = useState("");
   const [image, setImgFile] = useState();
+  const [number, setNumber] = useState(0);
+  const [email, setemail] = useState("");
   const [category, setCategory] = useState("");
   const dispatch = useDispatch();
   const AddItems = (e) => {
@@ -19,6 +21,8 @@ function AddTeacherInfo() {
         qualification,
         age,
         experience,
+        number,
+        email,
         image,
         category,
       })
@@ -46,6 +50,38 @@ function AddTeacherInfo() {
           id="teachername"
           value={teachername}
           onChange={(e) => setTeachername(e.target.value)}
+          required
+          className="w-full px-3 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-md font-bold mb-2"
+          htmlFor="teachername"
+        >
+          Email:
+        </label>
+        <input
+          type="text"
+          id="email"
+          value={email}
+          onChange={(e) => setemail(e.target.value)}
+          required
+          className="w-full px-3 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-md font-bold mb-2"
+          htmlFor="teachername"
+        >
+          phone number:
+        </label>
+        <input
+          type="text"
+          id="number"
+          value={number}
+          onChange={(e) => setNumber(e.target.value)}
           required
           className="w-full px-3 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
@@ -121,8 +157,10 @@ function AddTeacherInfo() {
           <option value="english">english</option>
           <option value="science">science</option>
           <option value="nepali">nepali</option>
-          <option value="nepali">opt math</option>
-          <option value="nepali">economics</option>
+          <option value="opt math">opt math</option>
+          <option value="economics">economics</option>
+          <option value="economics">computerscience</option>
+          <option value="social">social</option>
         </select>
       </div>
       <button

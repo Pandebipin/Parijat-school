@@ -7,7 +7,7 @@ const Sidebar = (props) => {
 
   return (
     <>
-      <div className="sidebar_container w-[150px] flex-col h-[100vh] flex  gap-7 rounded-md shadow-md">
+      <div className="sidebar_container w-[160px] flex-col h-[100vh] flex  gap-7 rounded-md shadow-md pt-5">
         <h2 className="catogery text-gray-800 text-center pl-0 pt-2 text-xl">
           {" "}
           Catogery{" "}
@@ -40,6 +40,24 @@ const Sidebar = (props) => {
             }}
           >
             nepali{" "}
+          </li>
+          <li
+            className=" hover:text-gray-600"
+            onClick={() => {
+              navigate("/teachers/social");
+              setState(true);
+            }}
+          >
+            social{" "}
+          </li>
+          <li
+            className=" hover:text-gray-600"
+            onClick={() => {
+              navigate("/teachers/compterscience");
+              setState(true);
+            }}
+          >
+            computerscience{" "}
           </li>
           <li
             onClick={() => {
