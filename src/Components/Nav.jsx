@@ -64,11 +64,6 @@ function Nav() {
         { name: "conference(skill development)" },
       ],
     },
-    {
-      name: "Admissons",
-      id: "5",
-      children: [{ name: "forms" }],
-    },
   ];
 
   const tl = gsap.timeline();
@@ -94,7 +89,7 @@ function Nav() {
   });
   const navigate = useNavigate();
   return (
-    <nav className="w-full z-10 top-0 bg-white shadow-lgfix backdrop-blur-[30px] nav h-[100px]">
+    <nav className="w-full z-50 top-0 bg-white shadow-lgfix backdrop-blur-[30px] nav h-[100px]">
       <div className="nav  relative gap-8 flex justify-around items-center mb-2 w-full">
         <div className="flex gap-2 mt-2">
           <img
@@ -120,7 +115,7 @@ function Nav() {
           </span>
           <span
             onClick={() => navigate("Form")}
-            className="lg:block  hidden cursor-pointer text-lg"
+            className="lg:block cursor-pointer text-lg"
           >
             {" "}
             Forms
@@ -168,10 +163,10 @@ function Nav() {
           </button>
         </div>
         {showCategory && (
-          <div className="absolute top-14 right-0 gradient  w-[100%] pt-6 p-4 pb-4 z-20">
+          <div className="absolute top-14 right-0 bg-yellow-300 w-[100%] pt-6 p-4 pb-4 z-50">
             <span className="text-white pl-2">catogroise</span>
             <hr className="bg-gray-100 opacity-50 my-5" />
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 px-8">
               {category.map((elm) => (
                 <div key={elm.id}>
                   <div className="text-white">{elm.name}</div>

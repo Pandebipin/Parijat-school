@@ -63,8 +63,8 @@ function Home() {
   return (
     <main className="max-w-[1900px]">
       <div className="page mt-0">
-        <div className="flex justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4">
-          <div className="left flex flex-col justify-center object-cover mix-blend-multiply gap-3 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
+        <div className="flex justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4 z-0">
+          <div className="left flex flex-col justify-center object-cover  gap-3 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
             <h1 className="text-black text-xl md:text-2xl lg:text-2xl font-sans font-bold">
               Lets create a brilliant future with our school
             </h1>
@@ -82,7 +82,7 @@ function Home() {
 
           <div className="right">
             <img
-              className="w-[400px] h-[400px]"
+              className="w-[400px] h-[400px] z-10"
               src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png"
               alt=""
             />
