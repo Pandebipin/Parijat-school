@@ -5,8 +5,8 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useSelector } from "react-redux";
-import { modal as modalSelector } from "../Store/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchModal, selectModal as modalSelector } from "../Store/modalSlice";
 
 const style = {
   position: "absolute",
@@ -20,12 +20,19 @@ const style = {
   p: 4,
 };
 
-export default function Contentmodal() {
+export default function ContentModal() {
   const [open, setOpen] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const modal = useSelector(modalSelector);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchModal());
+  }, [dispatch]);
+
   console.log(modal);
+
   return (
     <div>
       <Button onClick={handleOpen}>Open modal</Button>
@@ -44,24 +51,23 @@ export default function Contentmodal() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <>
-              <img
-                className="w-[400px] h-[200px] object-cover"
-                src="https://images.pexels.com/photos/1553783/pexels-photo-1553783.jpeg?cs=srgb&dl=pexels-myca-1553783.jpg&fm=jpg"
-                alt=""
-              />
-              <Typography
-                id="transition-modal-title"
-                variant="h6"
-                component="h2"
-              >
-                this is me bipin pandey
-              </Typography>
-              <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
-            </>
-            ;
+            {modal.map((elm) => (
+              <React.Fragment key={elm.id}>
+                <Typography
+                  id="transition-modal-title"
+                  variant="h6"
+                  component="h2"
+                  className="p-2"
+                >
+                  {elm.title}
+                </Typography>
+                <img
+                  className="w-[300px] md:w-[400px] lg:w-[400px] xl:w-[400px] h-[480px] object-cover"
+                  src={elm.url}
+                  alt={elm.title}
+                />
+              </React.Fragment>
+            ))}
           </Box>
         </Fade>
       </Modal>

@@ -19,14 +19,14 @@ function Blogposts() {
       {Blogs.map((blog) => (
         <div
           key={blog.id}
-          className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow "
         >
           <a href="#">
             {/* <img className="rounded-t-lg" src={blog.url} alt={blog.title} /> */}
           </a>
           <div className="p-5">
             <a href="#">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                 {blog.title}
               </h5>
             </a>

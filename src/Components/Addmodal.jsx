@@ -10,7 +10,7 @@ function Addmodal() {
     e.preventDefault();
     const currentDate = new Date().toISOString();
     if (imgFile && title) {
-      dispatch(Addcontentmodal({ title, imgFile, date: currentDate }));
+      dispatch(Addcontentmodal({ title, image: imgFile, date: currentDate }));
     }
   };
   return (

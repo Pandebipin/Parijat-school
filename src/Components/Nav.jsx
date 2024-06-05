@@ -81,27 +81,30 @@ function Nav() {
       delay: 0.3,
       stagger: 0.2,
     });
-    gsap.to(".nav", {
-      backgroundColor: "lightblue",
-      height: "90px",
-      scrollTrigger: {
-        trigger: ".nav",
-        scroller: "body",
-        start: "top -10%",
-        end: "top -11%",
-      },
-    });
+    // gsap.to(".nav", {
+    //   backgroundColor: "lightblue",
+    //   height: "90px",
+    //   scrollTrigger: {
+    //     trigger: ".nav",
+    //     scroller: "body",
+    //     start: "top -10%",
+    //     end: "top -11%",
+    //   },
+    // });
   });
   const navigate = useNavigate();
   return (
-    <nav className="w-full fixed z-10 top-0">
+    <nav className="w-full z-10 top-0 bg-white shadow-lgfix backdrop-blur-[30px] nav h-[100px]">
       <div className="nav  relative gap-8 flex justify-around items-center mb-2 w-full">
-        <div className="flex gap-2">
-          <h1 className="text-white text-xl" onClick={() => navigate("/")}>
-            Parijat
-          </h1>
+        <div className="flex gap-2 mt-2">
+          <img
+            onClick={() => navigate("/")}
+            className="w-[80px] h-[70px] object-cover mix-blend-multiply cursor-pointer mt-1"
+            src="https://wms.edigitalnepal.com/wms/files/ws-profile/1683883386147_753f2dc5-5c4d-4e46-a2cd-1e7837fb5876.png"
+            alt=""
+          />
         </div>
-        <div className="nav font-bold text-md flex gap-4 items-center py-1 text-white cursor-pointer">
+        <div className="nav font-bold text-md flex gap-4 items-center py-1 text-gray-900 cursor-pointer">
           <span
             onClick={() => navigate("/blogposts")}
             className="lg:block  hidden cursor-pointer text-lg"

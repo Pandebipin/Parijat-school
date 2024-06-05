@@ -10,7 +10,7 @@ function Footer() {
         <img
           onClick={() => navigate("/")}
           className="w-[90px] h-[80px] object-cover mix-blend-multiply"
-          src="https://scontent.fktm19-1.fna.fbcdn.net/v/t39.30808-6/268089005_191938573137811_1623283280562633961_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ae1JA7tSSjUQ7kNvgG8NKCH&_nc_ht=scontent.fktm19-1.fna&oh=00_AYAEkgmORATXWFDgA0uqLqTQCH3ztwsQsCu93-tqvqiuyg&oe=665861B9"
+          src="https://wms.edigitalnepal.com/wms/files/ws-profile/1683883386147_753f2dc5-5c4d-4e46-a2cd-1e7837fb5876.png"
           alt=""
         />
         <h1>"Helping Students Grow Into Leaders of Today and Tomorrow"</h1>

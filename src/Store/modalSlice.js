@@ -1,6 +1,6 @@
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
   status: "idle",
 };
 
-export const fetchmodal = createAsyncThunk("modalInfo/fetchmodal", async () => {
+export const fetchModal = createAsyncThunk("modalInfo/fetchModal", async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "modal"));
     const modal = querySnapshot.docs.map((doc) => ({
@@ -23,22 +23,21 @@ export const fetchmodal = createAsyncThunk("modalInfo/fetchmodal", async () => {
 });
 
 export const Addcontentmodal = createAsyncThunk(
-  "teacher/AddteacherInfo",
+  "modal/addContentModal",
   async (modal, { rejectWithValue }) => {
     const { image, title } = modal;
 
     try {
       const storage = getStorage();
-      const firestoreref = getFirestore();
       const storageRef = ref(storage, `modal/${image.name}`);
 
-      await uploadBytes(storageRef, url);
+      await uploadBytes(storageRef, image);
       const url = await getDownloadURL(storageRef);
 
-      const docRef = await addDoc(collection(firestoreref, "modal"), {
+      const docRef = await addDoc(collection(db, "modal"), {
         url,
         title,
-      }).then(() => console.log("upload"));
+      });
 
       return {
         id: docRef.id,
@@ -57,7 +56,7 @@ const modalSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchmodal.fulfilled, (state, action) => {
+      .addCase(fetchModal.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.modal = action.payload;
       })
@@ -70,7 +69,6 @@ const modalSlice = createSlice({
   },
 });
 
-// teacherInfoSlice.js
-export const modal = (state) => state.modal.modal;
+export const selectModal = (state) => state.modal.modal;
 
 export default modalSlice.reducer;

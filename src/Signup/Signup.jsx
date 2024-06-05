@@ -10,13 +10,13 @@ function Signup() {
   const [profile, setProfile] = useState();
   const navigate = useNavigate();
 
-  const handleEmailchange = (email) => {
-    setEmail(email.target.value);
+  const handleEmailchange = (e) => {
+    setEmail(e.target.value);
     seterror("");
   };
 
-  const handlePasswordchange = (email) => {
-    setPassword(email.target.value);
+  const handlePasswordchange = (e) => {
+    setPassword(e.target.value);
     seterror("");
   };
   const validateEmail = (email) => {
@@ -24,30 +24,20 @@ function Signup() {
     return regex.test(email);
   };
 
-  const validatePassword = (password) => {
-    const regex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
-  };
   const Login2 = async (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
       seterror("Invalid email format");
     }
-    if (!validatePassword(password)) {
-      seterror(
-        "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character"
-      );
+
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Registration successful");
+      navigate("/login");
+    } catch (e) {
+      console.log(e);
+      seterror(e.message);
     }
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        alert("success");
-        navigate("/login");
-      })
-      .catch((e) => {
-        console.log(e);
-        seterror(e.message);
-      });
   };
   return (
     <div className="flex flex-col items-center justify-center mx-auto gap-2 py-4 md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw] ">

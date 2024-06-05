@@ -11,8 +11,8 @@ function App() {
 
   return (
     <main className="bg-gray-200">
-      <Heading />
-      <div className="min-h-[70vh] mt-8 pt-10">
+      <Nav />
+      <div className="min-h-[70vh] mt-0">
         <Outlet />
       </div>
       <Footer />

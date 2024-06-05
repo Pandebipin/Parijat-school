@@ -5,8 +5,6 @@ import gsap from "gsap";
 import "./Home.css";
 import { FaCaretRight } from "react-icons/fa";
 import Slider from "../Components/Slider";
-import AddItems from "./Additems";
-import AddTeacherInfo from "../Components/AddTeacherInfo";
 import Testomonial from "../Components/testomonial";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchTeachers, selectAllTeachers } from "../Store/teacherInfoSlice";
 import Contentmodal from "../Components/Contentmodal";
 import Addmodal from "../Components/Addmodal";
+import Nav from "../Components/Nav";
 
 function Home() {
   const Blogs = useSelector(selectBuckets);
@@ -63,6 +62,33 @@ function Home() {
     t("description");
   return (
     <main className="max-w-[1900px]">
+      <div className="page mt-0">
+        <div className="flex justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4">
+          <div className="left flex flex-col justify-center object-cover mix-blend-multiply gap-3 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
+            <h1 className="text-black text-xl md:text-2xl lg:text-2xl font-sans font-bold">
+              Lets create a brilliant future with our school
+            </h1>
+            <span className="w-[260px] md:w-[400px] lg:w-[400px] xl:w-[400px] text-sm md:text-lg lg:text-lg xl:text-lg">
+              up school is a technology high school that is committed to
+              providing high quality education and implementing.
+            </span>
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-blue-700 text-white font-sans w-[120px] rounded-lg p-2"
+            >
+              join with us
+            </button>
+          </div>
+
+          <div className="right">
+            <img
+              className="w-[400px] h-[400px]"
+              src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
       <div className="page2 z-9 flex flex-col flex-wrap p-5 bg-[#FFFFFF]">
         <h1 className="text-gray-900 text-4xl font-bold flex justify-center items-start p-8 tracking-tighter">
           {t("greetings")}
@@ -121,7 +147,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="page3 w-full gap-5 min-h-[100vh] flex justify-center flex-col p-4">
+      <div className="page3 w-full gap-5 min-h-[100vh] flex justify-center flex-col p-4 bg-white">
         <ScrollTrigger onEnter={AnimateOn} onExit={AnimateOf}>
           <div className="images flex flex-col md:flex-row lg:flex-row  justify-center gap-8 w-full">
             <img
@@ -267,7 +293,7 @@ function Home() {
       </div>
       <div className="page-8 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
         <div className="flex justify-between p-4 w-full">
-          <h1 className="text-gray-800 text-xl border-b-2 border-gray-200">
+          <h1 className=" text-blue-800 font-sans font-bold p-2 capitalize text-2xl border-b-2 border-blue-500">
             rescent blogs
           </h1>
           <h1
@@ -281,24 +307,24 @@ function Home() {
           {Blogs.slice(0, 4).map((blog) => (
             <div
               key={blog.id}
-              className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              className="max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow"
             >
               <a href="#">
                 {/* <img className="rounded-t-lg" src={blog.url} alt={blog.title} /> */}
               </a>
               <div className="p-5">
                 <a href="#">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 p-1">
                     {blog.title}
                   </h5>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p className="mb-3 font-normal text-gray-700 p-1">
                   {blog.desc}
                 </p>
                 <a
                   onClick={() => navigate(`/singlepost/${blog.id}`)}
                   href="#"
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex w-full justify-center items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg bg-[#F59E0B] focus:ring-4 focus:outline-none"
                 >
                   Read more
                   <svg
@@ -324,7 +350,7 @@ function Home() {
       </div>
       <div className="page-9  w-full min-h-[60vh] gap-7 flex flex-col justify-center p-4">
         <div className="flex justify-between p-4 w-full">
-          <h1 className="text-gray-800 text-2xl border-b-2 border-gray-200">
+          <h1 className=" text-blue-800 font-sans font-bold p-2 capitalize text-2xl border-b-2 border-blue-500">
             our Teachers
           </h1>
 
@@ -387,6 +413,7 @@ function Home() {
       </div>
       <div className="page-10 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
         <Contentmodal />
+        <Addmodal />
       </div>
     </main>
   );
