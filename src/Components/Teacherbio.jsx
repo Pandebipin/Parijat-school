@@ -15,7 +15,7 @@ function Teacherbio() {
   }, [dispatch]);
 
   return (
-    <div className="flex gap-7">
+    <div className="flex gap-7 mt-9 pt-12">
       <Sidebar state={state} setState={setState} />
       <div className="p-6 bg-gray-100 w-full">
         <h2 className="text-3xl font-bold text-center mb-8">Our Teachers</h2>

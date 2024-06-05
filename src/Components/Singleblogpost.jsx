@@ -19,7 +19,7 @@ const Singleblogpost = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+    <div className="max-w-4xl mx-auto h-full p-8 bg-white shadow-md rounded-lg mt-11 pt-12">
       <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
       <p className="text-gray-600 mb-4">
         By Jane Doe | {new Date(blog.date).toLocaleDateString()}

@@ -24,6 +24,8 @@ i18n
           greetings8: "  For Pre-school",
           greetings9: "For Grade I to Grade VII",
           greetings10: "message from our principal",
+          greetings11: "Lets create a brilliant future with our school",
+          greetings12: "  join with us",
           values1: "respect",
           values2: "Service",
           values3: "Excellence",
@@ -59,6 +61,8 @@ i18n
               " One month’s written notice, in the prescribed form conveying the intention of withdrawal of the child should be submitted to the school authorities. If the application is received in the school office after the first week of the month, one month’s fees, in lieu of notice, will  be charged.",
             line11:
               "Welcome to our school, where every student is encouraged to achieve excellence, embrace curiosity, and grow in a supportive community. Together, we strive for a brighter future.",
+            line12:
+              " up school is a technology high school that is committed to providing high quality education and implementing.",
           },
         },
       },
@@ -73,6 +77,9 @@ i18n
           greetings7: "फिर्ती प्रक्रिया",
           greetings8: "पूर्व-विद्यालयका लागि",
           greetings9: "कक्षा १ देखि कक्षा ८ सम्मका लागि",
+          greetings10: "हाम्रो प्रधानाध्यापकको सन्देश",
+          greetings11: "हामी हाम्रो विद्यालयसँग उज्ज्वल भविष्य निर्माण गरौं",
+          greetings12: "हामीसँग सहभागी हुनुहोस्",
           values1: "श्रद्धा",
           values2: "सेवा",
           values3: "उत्कृष्टता",
@@ -109,6 +116,8 @@ i18n
               "बच्चाको फिर्तीको इरादा व्यक्त गर्ने एक महिनाको लिखित सूचना, तोकिएको फारममा, विद्यालय प्रशासनलाई बुझाउनुपर्छ। यदि निवेदन महिना सुरु भएको पहिलो सातापछि विद्यालय कार्यालयमा प्राप्त भयो भने, एक महिनाको शुल्क सूचना स्वरूप लिइनेछ।",
             line11:
               "हाम्रो विद्यालयमा स्वागत छ, जहाँ हरेक विद्यार्थीलाई उत्कृष्टता हासिल गर्न, जिज्ञासा अंगाल्न, र सहयोगी समुदायमा वृद्धि गर्न प्रोत्साहित गरिन्छ। सँगै, हामी उज्जवल भविष्यको लागि प्रयास गर्छौं।",
+            line12:
+              "यूपी स्कूल एक प्रविधि उच्च विद्यालय हो जसले उच्च गुणस्तरीय शिक्षा प्रदान गर्न र कार्यान्वयन गर्न प्रतिबद्ध छ",
           },
         },
       },

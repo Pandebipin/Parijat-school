@@ -13,7 +13,7 @@ const TeacherBio = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex gap-8 w-full">
+    <div className="flex gap-8 w-full mt-9 pt-12">
       <Sidebar />
       <div className="p-6 bg-gray-100 w-full">
         <h2 className="text-3xl font-bold text-center mb-8">Our Teachers</h2>

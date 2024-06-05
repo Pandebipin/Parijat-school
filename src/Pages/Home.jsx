@@ -13,7 +13,8 @@ import { useNavigate } from "react-router-dom";
 import { fetchTeachers, selectAllTeachers } from "../Store/teacherInfoSlice";
 import Contentmodal from "../Components/Contentmodal";
 import Addmodal from "../Components/Addmodal";
-import Nav from "../Components/Nav";
+
+import { useGSAP } from "@gsap/react";
 
 function Home() {
   const Blogs = useSelector(selectBuckets);
@@ -57,26 +58,32 @@ function Home() {
       opacity: 1,
     });
   };
+  useGSAP(() => {
+    gsap.from(".section-data", {
+      opacity: 0,
+      delay: 0.6,
+      x: "-10%",
+    });
+  });
   const { t } = useTranslation();
-  const { line1, line2, line3, line4, line5, line6, line7, line11 } =
+  const { line1, line2, line3, line4, line5, line6, line7, line11, line12 } =
     t("description");
   return (
     <main className="max-w-[1900px]">
-      <div className="page mt-0">
-        <div className="flex justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4 z-0">
+      <div className="page mt-[100px]">
+        <div className="flex section-data justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4 z-0">
           <div className="left flex flex-col justify-center object-cover  gap-3 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
             <h1 className="text-black text-xl md:text-2xl lg:text-2xl font-sans font-bold">
-              Lets create a brilliant future with our school
+              {t("greetings11")}
             </h1>
-            <span className="w-[260px] md:w-[400px] lg:w-[400px] xl:w-[400px] text-sm md:text-lg lg:text-lg xl:text-lg">
-              up school is a technology high school that is committed to
-              providing high quality education and implementing.
+            <span className="w-[260px] md:w-[400px] lg:w-[400px] xl:w-[430px] text-sm md:text-lg lg:text-lg xl:text-lg">
+              {line12}
             </span>
             <button
               onClick={() => navigate("/contact")}
               className="bg-blue-700 text-white font-sans w-[120px] rounded-lg p-2"
             >
-              join with us
+              {t("greetings12")}
             </button>
           </div>
 
@@ -412,8 +419,12 @@ function Home() {
         </div>
       </div>
       <div className="page-10 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
-        <Contentmodal />
-        <Addmodal />
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <h1 className="bg-blue-700 p-2 rounded-md text-white text-xl font-bold">
+            want to know offer
+          </h1>
+          <Contentmodal />
+        </div>
       </div>
     </main>
   );

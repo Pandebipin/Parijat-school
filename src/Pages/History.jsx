@@ -2,7 +2,7 @@ import React from "react";
 
 const History = () => {
   return (
-    <section className="bg-gray-100 py-12 w-full">
+    <section className="bg-gray-100 py-12 pt-8 mt-11 w-full">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           About Parijat Public School
