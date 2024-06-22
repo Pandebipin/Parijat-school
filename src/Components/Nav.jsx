@@ -100,7 +100,7 @@ function Nav() {
           <img
             onClick={() => navigate("/")}
             className="w-[80px] h-[70px] object-cover mix-blend-multiply cursor-pointer mt-1"
-            src="https://wms.edigitalnepal.com/wms/files/ws-profile/1683883386147_753f2dc5-5c4d-4e46-a2cd-1e7837fb5876.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT395yE39XXN0Sn7F5H_R3xruAW6KY_bXVzg&s"
             alt=""
           />
         </div>
