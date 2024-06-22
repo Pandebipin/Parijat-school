@@ -3,6 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   addDoc,
   collection,
+  deleteDoc,
+  doc,
   getDocs,
   getFirestore,
   updateDoc,
@@ -81,28 +83,19 @@ export const AddteacherInfo = createAsyncThunk(
   }
 );
 export const removeTeacherInfo = createAsyncThunk(
-  "teacher/removeTeacherInfo",
-  async (teacherId, { rejectWithValue }) => {
-    try {
-      const firestoreref = getFirestore();
-      await deleteDoc(doc(firestoreref, "teacherinfo", teacherId));
-      return teacherId;
-    } catch (error) {
-      return rejectWithValue("Failed to delete teacher info");
-    }
+  "teachers/removeTeacherInfo",
+  async (teacherId) => {
+    await deleteDoc(doc(db, "teacherinfo", teacherId));
+    return teacherId;
   }
 );
+
 export const updateTeacher = createAsyncThunk(
-  "teacher/updateteacher",
-  async ({ id, updatedata }, { rejectWithValue }) => {
-    try {
-      const firestoreref = getFirestore();
-      const teacherDocRef = doc(firestoreref, "teacherinfo", id);
-      await updateDoc(doc(teacherDocRef, updatedata));
-      return { id, ...updatedata };
-    } catch (error) {
-      return rejectWithValue("Failed to update teacher info");
-    }
+  "teachers/updateTeacher",
+  async ({ id, updatedata }) => {
+    const teacherDocRef = doc(db, "teacherinfo", id);
+    await updateDoc(teacherDocRef, updatedata);
+    return { id, ...updatedata };
   }
 );
 

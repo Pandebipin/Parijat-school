@@ -1,6 +1,6 @@
 // src/ContactSection.js
 
-import React from "react";
+import React, { useEffect } from "react";
 
 const Contactsection = () => {
   return (

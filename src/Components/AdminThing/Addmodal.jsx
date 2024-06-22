@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Addcontentmodal } from "../Store/modalSlice";
+import { Addcontentmodal } from "../../Store/modalSlice";
 
 function Addmodal() {
   const [title, setTitle] = useState("");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Addbucket } from "../Store/bucketSlice";
+import { Addbucket } from "../../Store/bucketSlice";
 
 const AddItems = () => {
   const [title, setTitle] = useState("");
@@ -8,13 +8,21 @@ const AddItems = () => {
   const [desc, setdesc] = useState("");
 
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    if (blogToEdit) {
+      setTitle(blogToEdit.title);
+      setdesc(blogToEdit.desc);
+    }
+  }, [blogToEdit]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const currentDate = new Date().toISOString();
 
     if (imgFile && title && desc) {
       dispatch(Addbucket({ title, imgFile, desc, date: currentDate }));
+      setTitle("");
+      setdesc("");
+      setImgFile(null);
     }
   };
 

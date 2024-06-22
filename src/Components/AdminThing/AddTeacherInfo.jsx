@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { useDispatch } from "react-redux";
-import { AddteacherInfo } from "../Store/teacherInfoSlice";
-
+import { AddteacherInfo } from "../../Store/teacherInfoSlice";
+import "../../App.css";
 function AddTeacherInfo() {
   const [teachername, setTeachername] = useState("");
   const [qualification, setQualification] = useState("");
@@ -32,17 +32,14 @@ function AddTeacherInfo() {
   return (
     <form
       onSubmit={AddItems}
-      className="max-w-sm mx-auto p-6 bg-white text-2xl font-bold mb-6 text-center text-gray-800"
+      className="max-w-sm mt-12 header pt-10 mx-auto p-6  text-2xl font-bold mb-6 text-center "
     >
-      <h2 className="text-xl font-bold mb-6 text-center text-gray-800">
+      <h2 className="text-xl font-bold mb-6 text-center ">
         Add Teacher Information
       </h2>
 
       <div className="mb-4">
-        <label
-          className="block text-gray-700 text-md font-bold mb-2"
-          htmlFor="teachername"
-        >
+        <label className="block  text-md font-bold mb-2" htmlFor="teachername">
           Teacher Name:
         </label>
         <input
@@ -51,14 +48,11 @@ function AddTeacherInfo() {
           value={teachername}
           onChange={(e) => setTeachername(e.target.value)}
           required
-          className="w-full px-3 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="w-full px-3 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
       <div className="mb-4">
-        <label
-          className="block text-gray-700 text-md font-bold mb-2"
-          htmlFor="teachername"
-        >
+        <label className="block text-md font-bold mb-2" htmlFor="teachername">
           Email:
         </label>
         <input
@@ -71,10 +65,7 @@ function AddTeacherInfo() {
         />
       </div>
       <div className="mb-4">
-        <label
-          className="block text-gray-700 text-md font-bold mb-2"
-          htmlFor="teachername"
-        >
+        <label className="block text-md font-bold mb-2" htmlFor="teachername">
           phone number:
         </label>
         <input
@@ -88,7 +79,7 @@ function AddTeacherInfo() {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="age">
+        <label className="block font-bold mb-2" htmlFor="age">
           Age:
         </label>
         <input
@@ -102,10 +93,7 @@ function AddTeacherInfo() {
       </div>
 
       <div className="mb-4">
-        <label
-          className="block text-gray-700 font-bold mb-2"
-          htmlFor="qualification"
-        >
+        <label className="block font-bold mb-2" htmlFor="qualification">
           Qualification:
         </label>
         <input
@@ -118,7 +106,7 @@ function AddTeacherInfo() {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="imgFile">
+        <label className="block font-bold mb-2" htmlFor="imgFile">
           Image:
         </label>
         <input
@@ -132,10 +120,7 @@ function AddTeacherInfo() {
       </div>
 
       <div className="mb-4">
-        <label
-          className="block text-gray-700 font-bold mb-2"
-          htmlFor="experience"
-        >
+        <label className="block font-bold mb-2" htmlFor="experience">
           Experience:
         </label>
         <input
@@ -149,7 +134,7 @@ function AddTeacherInfo() {
       </div>
       <div className="relative pb-7">
         <select
-          className="block cursor-pointer  w-full bg-white border border-gray-300 pr-8 rounded shadow "
+          className="block cursor-pointer  w-full  border border-gray-300 pr-8 rounded shadow "
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="">Select Category</option>

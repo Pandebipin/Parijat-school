@@ -10,6 +10,7 @@ const Singleblogpost = () => {
 
   useEffect(() => {
     dispatch(fetchBlogs());
+    window.scroll(0, 0);
   }, [dispatch]);
 
   const blog = blogs.find((blog) => blog.id === id);

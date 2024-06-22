@@ -12,8 +12,9 @@ function Teacherbio() {
 
   useEffect(() => {
     dispatch(fetchTeachers());
+    window.scroll(0, 0);
   }, [dispatch]);
-
+  // this side is shown before init
   return (
     <div className="flex gap-7 mt-9 pt-12">
       <Sidebar state={state} setState={setState} />

@@ -9,7 +9,7 @@ const TeacherBio = () => {
 
   useEffect(() => {
     dispatch(fetchTeachers());
-    // window.scroll(0, 0);
+    window.scroll(0, 0);
   }, [dispatch]);
 
   return (

@@ -4,23 +4,40 @@ import { HiEllipsisVertical, HiMiniBars3BottomRight } from "react-icons/hi2";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { auth } from "../firebase";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import LanguageSelector from "./LanguageSelector";
 
 function Nav() {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const auth = getAuth();
+
   const handlesubmit = (e) => {
-    if (auth) {
-      auth.signOut();
-    }
+    e.preventDefault();
+    auth.signOut().then(() => {
+      setIsAuthenticated(false);
+    });
   };
 
-  const [showCategory, setshowCategory] = useState(false);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true);
+        if (user.email === "admin12@gmail.com") {
+          setIsAdmin(true);
+        }
+      } else {
+        setIsAuthenticated(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
+
   const handleLogin = () => {
     navigate("/signup");
   };
-
+  const [showCategory, setshowCategory] = useState(false);
   const category = [
     {
       name: "Events",
@@ -89,7 +106,7 @@ function Nav() {
         </div>
         <div className="nav font-bold text-md flex gap-4 items-center py-1 text-gray-900 cursor-pointer">
           <span
-            onClick={() => navigate("/blogposts")}
+            onClick={() => navigate("blogposts")}
             className="lg:block hidden cursor-pointer text-lg"
           >
             News|events
@@ -101,7 +118,7 @@ function Nav() {
             Addmisions
           </span>
           <span
-            onClick={() => navigate("Form")}
+            onClick={() => navigate("/teachers/Form")}
             className="lg:block hidden cursor-pointer text-lg"
           >
             Forms
@@ -115,7 +132,7 @@ function Nav() {
             </span>
           ) : null}
 
-          {!auth.currentUser ? (
+          {!isAuthenticated ? (
             <button
               onClick={handleLogin}
               className="border-1 rounded-md bg-blue-600 px-4 outline-none py-2 text-white"
@@ -158,7 +175,10 @@ function Nav() {
                   <div className="py-2">
                     {elm.children.map((child, index) => (
                       <div key={index} className="text-white cursor-pointer">
-                        <Link to={`/teachers/${child.name}`}>
+                        <Link
+                          to={`/teachers/${child.name}`}
+                          className="text-white"
+                        >
                           &#8627; {child.name}
                         </Link>
                       </div>

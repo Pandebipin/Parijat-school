@@ -8,7 +8,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, seterror] = useState("");
-  const [profile, setProfile] = useState();
+
   const navigate = useNavigate();
 
   const Login2 = async (e) => {

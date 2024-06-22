@@ -2,95 +2,84 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./Pages/Home.jsx";
-import History from "./Pages/History.jsx";
 import { Provider } from "react-redux";
 import store from "./Store/store.js";
-import Teacherbio from "./Components/Teacherbio.jsx";
-import Allteacherbio from "./Components/Allteacherbio.jsx";
-import Blogposts from "./Pages/Blogposts.jsx";
-import Login from "./Pages/Login.jsx";
-import Signup from "./Signup/Signup.jsx";
-import Singleblogpost from "./Components/Singleblogpost.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./i18.js";
-import Addmission from "./Pages/Addmission.jsx";
-import Admindashboard from "./Pages/Admindashboard.jsx";
-import Form from "./Pages/Form.jsx";
-import Contactsection from "./Components/Contactsection.jsx";
-import Dancingsection from "./Components/Dancingsection.jsx";
-import Sports from "./Components/Sports.jsx";
-import Drawing from "./Components/Drawing.jsx";
+import AddTeacherInfo from "./Components/AdminThing/AddTeacherInfo.jsx";
+import TeacherList from "./Components/AdminThing/TeacherList.jsx";
+import Addstudent from "./Components/AdminThing/Addstudents.jsx";
+import StudentList from "./Components/AdminThing/studentList.jsx";
+
+// Lazy-loaded components
+const Home = React.lazy(() => import("./Pages/Home.jsx"));
+const History = React.lazy(() => import("./Pages/History.jsx"));
+const Teacherbio = React.lazy(() => import("./Components/Teacherbio.jsx"));
+const Allteacherbio = React.lazy(() =>
+  import("./Components/Allteacherbio.jsx")
+);
+const Blogposts = React.lazy(() => import("./Pages/Blogposts.jsx"));
+const Login = React.lazy(() => import("./Pages/Login.jsx"));
+const Signup = React.lazy(() => import("./Signup/Signup.jsx"));
+const Singleblogpost = React.lazy(() =>
+  import("./Components/Singleblogpost.jsx")
+);
+const Addmission = React.lazy(() => import("./Pages/Addmission.jsx"));
+const Admindashboard = React.lazy(() => import("./Pages/Admindashboard.jsx"));
+const Form = React.lazy(() => import("./Pages/Form.jsx"));
+const Contactsection = React.lazy(() =>
+  import("./Components/Contactsection.jsx")
+);
+const Dancingsection = React.lazy(() =>
+  import("./Components/Dancingsection.jsx")
+);
+const Sports = React.lazy(() => import("./Components/Sports.jsx"));
+const Drawing = React.lazy(() => import("./Components/Drawing.jsx"));
+const AdminLogin = React.lazy(() =>
+  import("./Components/AdminThing/Login.jsx")
+);
+const AdminSignup = React.lazy(() =>
+  import("./Components/AdminThing/Signup.jsx")
+);
+const AdminSidebar = React.lazy(() =>
+  import("./Components/AdminThing/AdminSidebar.jsx")
+);
 const App = React.lazy(() => import("./App.jsx"));
+
+// Define your routes using createBrowserRouter
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/Aboutus",
-        element: <History />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
-        path: "/teachers/:name",
-        element: <Teacherbio />,
-      },
-      {
-        path: "/allteachers",
-        element: <Allteacherbio />,
-      },
-      {
-        path: "/blogposts",
-        element: <Blogposts />,
-      },
-      {
-        path: "/singlepost/:id",
-        element: <Singleblogpost />,
-      },
-      {
-        path: "/addmision",
-        element: <Addmission />,
-      },
-      {
-        path: "/admindashborad",
-        element: <Admindashboard />,
-      },
-      {
-        path: "/contact",
-        element: <Contactsection />,
-      },
-      {
-        path: "/teachers/Dance",
-        element: <Dancingsection />,
-      },
-      {
-        path: "/teachers/sports",
-        element: <Sports />,
-      },
-      {
-        path: "/teachers/Drawing",
-        element: <Drawing />,
-      },
-      {
-        path: "/teachers/Form",
-        element: <Form />,
-      },
+      { path: "/", element: <Home /> },
+      { path: "/aboutus", element: <History /> },
+      { path: "/signup", element: <Signup /> },
+      { path: "/teachers/:name", element: <Teacherbio /> },
+      { path: "/allteachers", element: <Allteacherbio /> },
+      { path: "/blogposts", element: <Blogposts /> },
+      { path: "/singlepost/:id", element: <Singleblogpost /> },
+      { path: "/addmision", element: <Addmission /> },
+      { path: "/admin", element: <Admindashboard /> },
+      { path: "/contact", element: <Contactsection /> },
+      { path: "/teachers/dance", element: <Dancingsection /> },
+      { path: "/teachers/sports", element: <Sports /> },
+      { path: "/teachers/drawing", element: <Drawing /> },
+      { path: "/teachers/form", element: <Form /> },
+      { path: "/adminLogin", element: <AdminLogin /> },
+      { path: "/adminSignup", element: <AdminSignup /> },
+      { path: "/Addteachers", element: <AddTeacherInfo /> },
+      { path: "/Addstudents", element: <Addstudent /> },
+      { path: "/login", element: <Login /> },
+      { path: "/teacherlist", element: <TeacherList /> },
+      { path: "/studentList", element: <StudentList /> },
     ],
   },
 ]);
+
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <Suspense

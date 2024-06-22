@@ -1,49 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 
-function Signup() {
+function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, seterror] = useState("");
-  const [profile, setProfile] = useState();
+
   const navigate = useNavigate();
-
-  const handleEmailchange = (e) => {
-    setEmail(e.target.value);
-    seterror("");
-  };
-
-  const handlePasswordchange = (e) => {
-    setPassword(e.target.value);
-    seterror("");
-  };
-  const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
 
   const Login2 = async (e) => {
     e.preventDefault();
-    if (!validateEmail(email)) {
-      seterror("Invalid email format");
-    }
 
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert("Registration successful");
-      navigate("login");
-    } catch (e) {
-      console.log(e);
-      seterror(e.message);
-    }
+    await signInWithEmailAndPassword(auth, email, password).then(() => {
+      navigate("/");
+    });
   };
-  useEffect(() => {
-    window.scroll(0, 0);
-  });
   return (
-    <div className="mt-9 pt-12 flex flex-col items-center justify-center mx-auto gap-2 py-4 md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw] ">
+    <div className="mt-12 pt-12 flex flex-col items-center justify-center mx-auto gap-2 py-4 md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw] ">
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
@@ -56,12 +31,12 @@ function Signup() {
           Sign in to your account
         </h2>
         <p className="mt-2 text-center text-base text-black/60">
-          Already have an account?&nbsp;
+          Don&apos;t have any account?&nbsp;
           <Link
-            to="/login"
+            to="/signup"
             className="font-medium text-primary transition-all duration-200 hover:underline"
           >
-            login
+            Sign Up
           </Link>
         </p>
         {error ? (
@@ -75,7 +50,7 @@ function Signup() {
               type="email"
               className="rounded p-2 w-full"
               value={email}
-              onChange={handleEmailchange}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <br />
 
@@ -85,20 +60,13 @@ function Signup() {
               placeholder="Enter your password"
               className="rounded p-2 w-full"
               value={password}
-              onChange={handlePasswordchange}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => setProfile(e.target.files[0])}
-              name=""
-              id=""
-            />
             <br />
 
             <button type="submit" className="w-full">
-              Sign in
+              log in
             </button>
           </div>
         </form>
@@ -107,4 +75,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default AdminLogin;

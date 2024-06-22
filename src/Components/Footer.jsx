@@ -13,8 +13,10 @@ function Footer() {
           src="https://wms.edigitalnepal.com/wms/files/ws-profile/1683883386147_753f2dc5-5c4d-4e46-a2cd-1e7837fb5876.png"
           alt=""
         />
-        <h1>"Helping Students Grow Into Leaders of Today and Tomorrow"</h1>
-        <h1>Follow us</h1>
+        <h1 className="text-lg">
+          "Helping Students Grow Into Leaders of Today and Tomorrow"
+        </h1>
+        <h1 className="text-lg">Follow us</h1>
         <div className="icons flex gap-3">
           <FaFacebookF />
           <FaInstagram />
@@ -54,7 +56,7 @@ function Footer() {
         </ul>
       </div>
       <div className="flex flex-col gap-3 p-4 px-8">
-        <h1>our aim to made students well guy</h1>
+        <h1 className="text-lg">our aim to made students well guy</h1>
         <span>Roar towards the mission</span>
         <hr className="bg-gray-900 opacity-15" />
         <span>come here and join us for support: 9869537528</span>

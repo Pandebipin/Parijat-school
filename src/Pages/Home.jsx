@@ -12,10 +12,13 @@ import { fetchBlogs, selectBuckets } from "../Store/bucketSlice";
 import { useNavigate } from "react-router-dom";
 import { fetchTeachers, selectAllTeachers } from "../Store/teacherInfoSlice";
 import Contentmodal from "../Components/Contentmodal";
-import Addmodal from "../Components/Addmodal";
-
+import { PiStudentBold } from "react-icons/pi";
+import { MdGppGood } from "react-icons/md";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { useGSAP } from "@gsap/react";
-
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoTwitter } from "react-icons/io5";
+import { FaGoogle } from "react-icons/fa6";
 function Home() {
   const Blogs = useSelector(selectBuckets);
 
@@ -72,7 +75,7 @@ function Home() {
     <main className="max-w-[1900px]">
       <div className="page mt-[100px]">
         <div className="flex section-data justify-around p-6 flex-col md:flex-row lg:flex-row xl:flex-row gap-4 z-0">
-          <div className="left flex flex-col justify-center object-cover  gap-3 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
+          <div className="left flex flex-col justify-center object-cover  gap-4 w-[280px] md:w-[400px] lg:w-[400px] xl:w-[400px]">
             <h1 className="text-black text-xl md:text-2xl lg:text-2xl font-sans font-bold">
               {t("greetings11")}
             </h1>
@@ -89,14 +92,70 @@ function Home() {
 
           <div className="right">
             <img
-              className="w-[400px] h-[400px] z-10"
+              className="lg:w-[500px] w-[400px] h-[400px] z-10"
               src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png"
               alt=""
             />
           </div>
         </div>
       </div>
-      <div className="page2 z-9 flex flex-col flex-wrap p-5 bg-[#FFFFFF]">
+
+      <div className="page2 z-9 flex flex-col flex-wrap p-5 pt-8 mt-9 bg-[#FFFFFF]">
+        <div className="flex justify-around w-full p-3 bg-[#1E3A8A] text-white lg:h-[45vh]">
+          <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row items-center justify-around gap-7 px-3 w-full pt-8 ">
+            <ScrollTrigger
+              onEnter={() => setcounterOn(true)}
+              onExit={() => setcounterOn(false)}
+            >
+              <div className="increment flex flex-col justify-center gap-4 hover:scale-105 transform transition-transform sm:w-auto capitalize  p-2 px-4">
+                <div className="flex justify-center items-center h-[40px] w-[60px]">
+                  <PiStudentBold className="text-white text-5xl" />
+                </div>
+                {counterOn && (
+                  <div className="flex justify-center items-center gap-2 text-4xl font-bold font-sans">
+                    <CountUp start={0} end={1000} duration={1} delay={0} />
+                    <h1 className="font-bold">+</h1>
+                  </div>
+                )}
+                <span className="text-lg "> Students</span>
+              </div>
+            </ScrollTrigger>
+            <ScrollTrigger
+              onEnter={() => setcounterOn(true)}
+              onExit={() => setcounterOn(false)}
+            >
+              <div className="increment flex flex-col justify-center gap-3 hover:scale-105 transform transition-transform sm:w-auto capitalize  p-2 px-4">
+                <div className="3xl flex justify-center items-center h-[40px] w-[60px]">
+                  <MdGppGood className="text-white text-5xl" />
+                </div>
+                {counterOn && (
+                  <div className="flex justify-center items-center gap-2 text-4xl font-bold font-sans">
+                    <CountUp start={0} end={100} duration={1} delay={0} />
+                    <h1 className="font-bold">%</h1>
+                  </div>
+                )}
+                <span className="text-lg "> Excellence</span>
+              </div>
+            </ScrollTrigger>
+            <ScrollTrigger
+              onEnter={() => setcounterOn(true)}
+              onExit={() => setcounterOn(false)}
+            >
+              <div className="increment flex flex-col justify-center gap-3 hover:scale-105 transform transition-transform sm:w-auto capitalize  p-2 px-4">
+                <div className=" flex justify-center items-center h-[40px] w-[60px]">
+                  <RiCustomerService2Fill className="text-white text-5xl" />
+                </div>
+                {counterOn && (
+                  <div className="flex justify-center items-center gap-2 text-4xl font-bold font-sans">
+                    <CountUp start={0} end={100} duration={1} delay={0} />
+                    <h1 className="font-bold">%</h1>
+                  </div>
+                )}
+                <span className="text-lg "> Service</span>
+              </div>
+            </ScrollTrigger>
+          </div>
+        </div>
         <h1 className="text-gray-900 text-4xl font-bold flex justify-center items-start p-8 tracking-tighter">
           {t("greetings")}
         </h1>
@@ -111,46 +170,6 @@ function Home() {
               </h1>
             )}
           </ScrollTrigger>
-        </div>
-        <div className="flex justify-center w-full p-3">
-          <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-center gap-7 px-3 w-full pt-8 ">
-            <ScrollTrigger
-              onEnter={() => setcounterOn(true)}
-              onExit={() => setcounterOn(false)}
-            >
-              <div className="increment flex justify-center gap-2 hover:scale-105 shadow-lg transform transition-transform sm:w-auto text-xl capitalize rounded-lg bg-blue-300 p-2 px-4">
-                Students
-                {counterOn && (
-                  <CountUp start={0} end={1000} duration={1} delay={0} />
-                )}
-                +
-              </div>
-            </ScrollTrigger>
-            <ScrollTrigger
-              onEnter={() => setcounterOn(true)}
-              onExit={() => setcounterOn(false)}
-            >
-              <div className="increment flex items-center justify-center sm:w-auto gap-2 hover:scale-105 shadow-lg transform transition-transform text-center text-xl capitalize rounded-lg bg-blue-300 p-2 px-4">
-                Excellence
-                {counterOn && (
-                  <CountUp start={0} end={1000} duration={1} delay={0} />
-                )}
-                +
-              </div>
-            </ScrollTrigger>
-            <ScrollTrigger
-              onEnter={() => setcounterOn(true)}
-              onExit={() => setcounterOn(false)}
-            >
-              <div className="increment flex justify-center gap-2 hover:scale-105 shadow-lg transform transition-transform text-xl capitalize rounded-lg bg-blue-300 p-2 px-4">
-                Service
-                {counterOn && (
-                  <CountUp start={0} end={100} duration={2} delay={0} />
-                )}
-                %
-              </div>
-            </ScrollTrigger>
-          </div>
         </div>
       </div>
 
@@ -183,7 +202,7 @@ function Home() {
         </ScrollTrigger>
       </div>
 
-      <div className="page4 w-full min-h-[60vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
+      <div className="page4 w-full mt-9 md:mt-0 lg:mt-0 xl:mt-[-4] min-h-[60vh] gap-8 p-4 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
         <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
           <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col gap-3 p-4">
             <img
@@ -206,7 +225,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="page5 w-full min-h-[50vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
+
+      <div className="page5 w-full min-h-[50vh] gap-8 p-4  md:pt-50 lg:pt-50 xl:pt-60 flex justify-center mt-5">
         <div className="flex w-full flex-col md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
           <div className="left flex justify-center ">
             <div className="box2">{/* images insert */}</div>
@@ -230,7 +250,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="page4 w-full mt-5 min-h-[70vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
+      <div className="page4 w-full mt-8 min-h-[70vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
         <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
           <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col gap-3 p-4">
             <div className="rotate w-[100px] h-[80px]">
@@ -295,10 +315,10 @@ function Home() {
         </div>
       </div>
 
-      <div className="page-7 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
+      <div className="page-7 w-full min-h-[40vh] gap-7 flex flex-col justify-center">
         <Testomonial />
       </div>
-      <div className="page-8 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
+      <div className="page-8 w-full min-h-[60vh] gap-7 bg-white flex flex-col justify-center">
         <div className="flex justify-between p-4 w-full">
           <h1 className=" text-blue-800 font-sans font-bold p-2 capitalize text-2xl border-b-2 border-blue-500">
             rescent blogs
@@ -355,44 +375,8 @@ function Home() {
           ))}
         </div>
       </div>
-      <div className="page-9  w-full min-h-[60vh] gap-7 flex flex-col justify-center p-4">
-        <div className="flex justify-between p-4 w-full">
-          <h1 className=" text-blue-800 font-sans font-bold p-2 capitalize text-2xl border-b-2 border-blue-500">
-            our Teachers
-          </h1>
 
-          <h1
-            className="text-gray-800 text-2xl cursor-pointer"
-            onClick={() => navigate("/allteachers")}
-          >
-            view more
-          </h1>
-        </div>
-        <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-          {teachers.slice(0, 4).map((teacher) => (
-            <div key={teacher.id} className="bg-white p-4 rounded-lg shadow-lg">
-              <div className="flex flex-col items-center">
-                <img
-                  className="w-32 h-32 rounded-full object-cover mb-4"
-                  src={teacher.url}
-                  alt={teacher.teachername}
-                />
-                <h3 className="text-xl font-semibold mb-2">
-                  Name:{teacher.teachername}
-                </h3>
-                <p className="text-gray-700 mb-2">
-                  Qualification:{teacher.qualification}
-                </p>
-                <p className="text-gray-500 mb-2">
-                  Experience: {teacher.experience} years
-                </p>
-                <p className="text-gray-500">Age: {teacher.age}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="page11 bg-gray-300 w-full min-h-[60vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
+      <div className="page11 w-full min-h-[60vh] gap-8 p-4 pt-30 md:pt-50 lg:pt-60 xl:pt-60 flex justify-center mt-16">
         <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
           <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col gap-3 p-4">
             <img
@@ -410,7 +394,7 @@ function Home() {
           <div className="right flex flex-start justify-center ">
             <div className="imagebox">
               <img
-                className="h-[400px] w-[500px] object-cover mix-blend-multiply rounded-lg"
+                className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg"
                 src="https://scontent.fbwa5-1.fna.fbcdn.net/v/t39.30808-6/432773669_471666571885744_666171203973380415_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=lMZuIzbJ2coQ7kNvgHCaWob&_nc_ht=scontent.fbwa5-1.fna&oh=00_AYCMXUTjC_qNz34cxNw9W0xx4H1O_yJ9YmkapmwQlBN0sg&oe=6661ABD5"
                 alt=""
               />
@@ -418,10 +402,77 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="page-10 w-full min-h-[60vh] gap-7 flex flex-col justify-center">
+      <div className="page-9 md:pt-50 lg:pt-50 xl:pt-50  w-full min-h-[60vh] gap-7 flex flex-col justify-center p-4  bg-white pt-20">
+        <div className="flex flex-col justify-center items-center px-4 w-full lg:w-6/12 mx-auto">
+          <h1 className="text-gray-800  font-sans font-semibold p-2 capitalize text-xl lg:text-4xl">
+            Here are our Teachers
+          </h1>
+          <p className="text-md lg:text-lg leading-relaxed m-4 text-blueGray-500">
+            "According to the National Oceanic and Atmospheric Administration,
+            Ted, Scambos, NSIDClead scentist, puts the potentially record
+            <span className="flex justify-center items-center">
+              {" "}
+              maximum and nobody is hell."
+            </span>
+          </p>
+          <h1
+            className="text-gray-700 text-lg cursor-pointer"
+            onClick={() => navigate("/allteachers")}
+          >
+            view more
+          </h1>
+        </div>
+        <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+          {teachers.slice(0, 4).map((teacher) => (
+            <div key={teacher.id} className=" p-4 ">
+              <div className="flex flex-col items-center">
+                <img
+                  className="w-32 h-32 rounded-full object-cover mb-4"
+                  src={teacher.url}
+                  alt={teacher.teachername}
+                />
+
+                <h3 className="text-xl font-bold mb-2 capitalize">
+                  {teacher.teachername}
+                </h3>
+                <p class="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                  {teacher.category}
+                </p>
+                <div className="flex gap-1">
+                  <div className="relative group">
+                    <div className="bg-blue-600 text-white w-[35px] h-[35px] rounded-full flex items-center justify-center cursor-pointer">
+                      <FaFacebookF className="text-xl" />
+                    </div>
+                    <div className="absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-gray-800 rounded-md group-hover:block">
+                      Facebook
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="bg-blue-500 text-white w-[35px] h-[35px] rounded-full flex items-center justify-center cursor-pointer">
+                      <IoLogoTwitter className="text-xl" />
+                    </div>
+                    <div className="absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-gray-800 rounded-md group-hover:block">
+                      twitter
+                    </div>
+                  </div>
+                  <div className="relative group">
+                    <div className="bg-red-600 text-white w-[35px] h-[35px] rounded-full flex items-center justify-center cursor-pointer">
+                      <FaGoogle className="text-xl" />
+                    </div>
+                    <div className="absolute bottom-full mb-2 hidden w-max px-2 py-1 text-sm text-white bg-gray-800 rounded-md group-hover:block">
+                      Google
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="page-10 bg-white w-full min-h-[30vh] gap-7 flex flex-col justify-center">
         <div className="flex flex-col gap-2 justify-center items-center">
           <h1 className="bg-blue-700 p-2 rounded-md text-white text-xl font-bold">
-            want to know offer
+            want to know offer click below
           </h1>
           <Contentmodal />
         </div>
