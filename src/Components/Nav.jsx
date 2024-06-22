@@ -94,7 +94,7 @@ function Nav() {
 
   const navigate = useNavigate();
   return (
-    <nav className="w-full z-50 top-0 bg-white shadow-lg backdrop-blur-[30px] nav fixed h-[100px]">
+    <nav className="w-full z-50 top-0 bg-white shadow-lg backdrop-blur-[30px] nav fixed h-[100px] mb-4">
       <div className="nav relative gap-8 flex justify-around items-center mb-2 w-full">
         <div className="flex gap-2 mt-2">
           <img
