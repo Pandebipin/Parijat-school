@@ -395,7 +395,7 @@ function Home() {
             <div className="imagebox">
               <img
                 className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg"
-                src="https://scontent.fbwa5-1.fna.fbcdn.net/v/t39.30808-6/432773669_471666571885744_666171203973380415_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=lMZuIzbJ2coQ7kNvgHCaWob&_nc_ht=scontent.fbwa5-1.fna&oh=00_AYCMXUTjC_qNz34cxNw9W0xx4H1O_yJ9YmkapmwQlBN0sg&oe=6661ABD5"
+                src="https://scontent.fbwa5-2.fna.fbcdn.net/v/t39.30808-6/444747360_506396678412733_7871591592470455060_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rWAYv3DdwF4Q7kNvgEm1CXC&_nc_ht=scontent.fbwa5-2.fna&oh=00_AYDBRVJkcTaHmBD9MfrlG_ze-Gg_tcJMH9MmyRKiC57qMA&oe=667F5E6C"
                 alt=""
               />
             </div>
