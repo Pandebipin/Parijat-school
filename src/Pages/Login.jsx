@@ -19,7 +19,7 @@ function Login() {
     });
   };
   return (
-    <div className="mt-9 pt-12 flex flex-col items-center justify-center mx-auto gap-2 py-4 md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw] ">
+    <div className="py-12 mt-[100px] flex flex-col items-center justify-center mx-auto gap-2  md:w-[50vw] xl:w-[28vw] sm:w-[15vw] lg:w-[28vw] ">
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >

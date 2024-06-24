@@ -16,7 +16,7 @@ function Blogposts() {
   console.log(Blogs);
 
   return (
-    <div className="grid mt-12 pt-12 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+    <div className="grid py-12 mt-[100px] grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
       {Blogs.map((blog) => (
         <div
           key={blog.id}

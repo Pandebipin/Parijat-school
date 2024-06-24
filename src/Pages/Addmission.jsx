@@ -5,7 +5,7 @@ function Addmission() {
   const { t } = useTranslation();
   const { line8, line9, line10 } = t("description");
   return (
-    <div className="w-full screen mt-12 pt-12">
+    <div className="w-full screen py-12 mt-[100px]">
       <div className="flex flex-col gap-6 p-2 justify-around">
         <div className="flex flex-col gap-4 justify-center items-center">
           <h1 className="text-2xl text-orange-400 ">{t("greetings6")}</h1>
