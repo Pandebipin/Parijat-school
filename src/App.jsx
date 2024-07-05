@@ -51,8 +51,6 @@ function App() {
       } else {
         navigate("/");
       }
-    } else {
-      navigate("/login");
     }
   }, [isAuthenticated, isAdmin, navigate]);
 

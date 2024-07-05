@@ -33,7 +33,7 @@ function Signup() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Registration successful");
-      navigate("login");
+      navigate("/login");
     } catch (e) {
       console.log(e);
       seterror(e.message);

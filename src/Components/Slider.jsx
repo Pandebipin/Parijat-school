@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,16 +15,21 @@ export default function App() {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1} // default to 1
         spaceBetween={12}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+          },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>
-          {" "}
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
               src="https://www.greenshaw.co.uk/_site/data/files/images/slideshow/1/746861C19A308C0CA2A2605C10B091F1.jpg"
@@ -37,7 +42,6 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
               src="https://www.greenshaw.co.uk/_site/data/files/images/slideshow/1/746861C19A308C0CA2A2605C10B091F1.jpg"
@@ -50,7 +54,6 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
               src="https://static.toiimg.com/thumb/msid-104665854,width-1280,height-720,resizemode-4/104665854.jpg"
@@ -63,7 +66,6 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
               src="https://static.toiimg.com/thumb/msid-104665854,width-1280,height-720,resizemode-4/104665854.jpg"

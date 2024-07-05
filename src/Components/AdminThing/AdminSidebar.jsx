@@ -189,9 +189,13 @@ const AdminSidebar = () => {
             </button>
             {blogsDropdownOpen && (
               <div className="pl-10 ">
-                <Link className="block px-4 py-2 ">Blogs List</Link>
-                <Link className="block px-4 py-2 ">view List</Link>
-                <Link className="block px-4 py-2 ">upload Blogs</Link>
+                <Link to={"/bloglist"} className="block px-4 py-2 ">
+                  Blogs List
+                </Link>
+
+                <Link to={"/Addblog"} className="block px-4 py-2 ">
+                  upload Blogs
+                </Link>
               </div>
             )}
           </div>

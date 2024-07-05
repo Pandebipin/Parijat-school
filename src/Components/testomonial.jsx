@@ -15,10 +15,16 @@ export default function Testomonial() {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={12}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 2,
+          },
         }}
         modules={[Pagination]}
         className="mySwiper"

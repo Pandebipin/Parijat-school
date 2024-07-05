@@ -2,9 +2,9 @@
 import { deleteDoc, doc, getFirestore } from "firebase/firestore";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBlogs } from "../../Store/bucketSlice";
-
-const BlogList = ({ editBlog }) => {
+import { fetchBlogs, selectBuckets } from "../../Store/bucketSlice";
+import "../../App.css";
+const BlogList = () => {
   const dispatch = useDispatch();
   const blogs = useSelector(selectBuckets);
 
@@ -15,16 +15,16 @@ const BlogList = ({ editBlog }) => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 header py-12 mt-[100px] px-4">
       {blogs.map((blog) => (
-        <div key={blog.id} className="p-4 bg-white shadow rounded-lg">
+        <div key={blog.id} className="p-4 shadow rounded-lg">
           <h3 className="text-xl font-semibold">{blog.title}</h3>
           <p>{blog.desc}</p>
           {blog.url && (
             <img
               src={blog.url}
               alt={blog.title}
-              className="mt-2 w-full h-auto"
+              className="mt-2 w-full h-[300px]"
             />
           )}
           <div className="flex space-x-2 mt-2">

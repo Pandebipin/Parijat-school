@@ -204,7 +204,7 @@ function Home() {
 
       <div className="page4 w-full mt-9 md:mt-0 lg:mt-0 xl:mt-[-4] min-h-[60vh] gap-8 p-4 md:pt-50 lg:pt-50 xl:pt-60 flex justify-center">
         <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between md:justify-around xl:justify-around lg:justify-around text-center lg:flex-row xl:flex-row">
-          <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col gap-3 p-4">
+          <div className="left w-full md:w-[45%] lg:w-[45%] xl:w-[45%] flex flex-col justify-center gap-3">
             <img
               className="rotate w-20 h-20"
               src="https://samriddhischool.edu.np/static/media/target.c5c449ad0d30cdde8c8988f9b06de9de.svg"
@@ -213,10 +213,10 @@ function Home() {
             <h1 className="text-gray-800 flex flex-start pb-2 font-bold text-2xl capitalize ">
               {t("greetings2")}
             </h1>
-            <p className="text-sm tracking-wide text-gray-600 md:text-md font-serif lg:text-lg xl:text-lg text-start align-center">
+            <p className="text-sm text-gray-600 md:text-md font-serif lg:text-lg xl:text-lg">
               {line2}
             </p>
-            <p className="text-sm tracking-wide text-gray-600 md:text-md font-serif lg:text-lg xl:text-lg text-start align-center">
+            <p className="text-sm text-gray-600 md:text-md font-serif lg:text-lg xl:text-lg">
               {line3}
             </p>
           </div>

@@ -10,6 +10,9 @@ import AddTeacherInfo from "./Components/AdminThing/AddTeacherInfo.jsx";
 import TeacherList from "./Components/AdminThing/TeacherList.jsx";
 import Addstudent from "./Components/AdminThing/Addstudents.jsx";
 import StudentList from "./Components/AdminThing/studentList.jsx";
+import AddItems from "./Components/AdminThing/Additems.jsx";
+import BlogList from "./Components/AdminThing/Bloglist.jsx";
+import Profile from "./Components/AdminThing/Profile.jsx";
 
 // Lazy-loaded components
 const Home = React.lazy(() => import("./Pages/Home.jsx"));
@@ -41,9 +44,7 @@ const AdminLogin = React.lazy(() =>
 const AdminSignup = React.lazy(() =>
   import("./Components/AdminThing/Signup.jsx")
 );
-const AdminSidebar = React.lazy(() =>
-  import("./Components/AdminThing/AdminSidebar.jsx")
-);
+
 const App = React.lazy(() => import("./App.jsx"));
 
 // Define your routes using createBrowserRouter
@@ -53,26 +54,29 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/aboutus", element: <History /> },
-      { path: "/signup", element: <Signup /> },
-      { path: "/teachers/:name", element: <Teacherbio /> },
-      { path: "/allteachers", element: <Allteacherbio /> },
-      { path: "/blogposts", element: <Blogposts /> },
-      { path: "/singlepost/:id", element: <Singleblogpost /> },
-      { path: "/addmision", element: <Addmission /> },
-      { path: "/admin", element: <Admindashboard /> },
-      { path: "/contact", element: <Contactsection /> },
-      { path: "/teachers/dance", element: <Dancingsection /> },
-      { path: "/teachers/sports", element: <Sports /> },
-      { path: "/teachers/drawing", element: <Drawing /> },
-      { path: "/teachers/form", element: <Form /> },
-      { path: "/adminLogin", element: <AdminLogin /> },
-      { path: "/adminSignup", element: <AdminSignup /> },
-      { path: "/Addteachers", element: <AddTeacherInfo /> },
-      { path: "/Addstudents", element: <Addstudent /> },
-      { path: "/login", element: <Login /> },
-      { path: "/teacherlist", element: <TeacherList /> },
-      { path: "/studentList", element: <StudentList /> },
+      { path: "aboutus", element: <History /> },
+      { path: "signup", element: <Signup /> },
+      { path: "teachers/:name", element: <Teacherbio /> },
+      { path: "allteachers", element: <Allteacherbio /> },
+      { path: "blogposts", element: <Blogposts /> },
+      { path: "singlepost/:id", element: <Singleblogpost /> },
+      { path: "addmision", element: <Addmission /> },
+      { path: "admin", element: <Admindashboard /> },
+      { path: "contact", element: <Contactsection /> },
+      { path: "teachers/dance", element: <Dancingsection /> },
+      { path: "teachers/sports", element: <Sports /> },
+      { path: "teachers/drawing", element: <Drawing /> },
+      { path: "teachers/form", element: <Form /> },
+      { path: "adminLogin", element: <AdminLogin /> },
+      { path: "adminSignup", element: <AdminSignup /> },
+      { path: "Addteachers", element: <AddTeacherInfo /> },
+      { path: "Addstudents", element: <Addstudent /> },
+      { path: "login", element: <Login /> },
+      { path: "teacherlist", element: <TeacherList /> },
+      { path: "studentList", element: <StudentList /> },
+      { path: "/Addblog", element: <AddItems /> },
+      { path: "/bloglist", element: <BlogList /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
 ]);

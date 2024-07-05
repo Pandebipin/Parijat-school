@@ -77,7 +77,7 @@ const Header = ({ themeMode, setThemeMode }) => {
   };
 
   return (
-    <header className="header first-letter:bg-white fixed z-1000 w-full shadow-md p-4 flex justify-between items-center">
+    <header className="header first-letter:bg-white fixed z-20 w-full shadow-md p-4 flex justify-between items-center">
       <div className="flex items-center space-x-6">
         <img
           src="https://wms.edigitalnepal.com/wms/files/ws-profile/1683883386147_753f2dc5-5c4d-4e46-a2cd-1e7837fb5876.png"
@@ -193,6 +193,7 @@ const Header = ({ themeMode, setThemeMode }) => {
                   Account Settings
                 </Link>
                 <Link
+                  to={"/profile"}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100  no-underline"
                   role="menuitem"
                   onClick={handleClose}

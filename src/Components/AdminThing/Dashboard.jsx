@@ -17,15 +17,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchstudents, selectAllstudents } from "../../Store/studentSlice";
 import "../../App.css";
 import Linechart from "./Linechart";
+import { fetchTeachers, selectAllTeachers } from "../../Store/teacherInfoSlice";
+import { fetchBlogs, selectBuckets } from "../../Store/bucketSlice";
 
 const Dashboard = () => {
   const [selectedClass, setSelectedClass] = useState("");
   const [selectedSection, setSelectedSection] = useState("");
   const dispatch = useDispatch();
   const students = useSelector(selectAllstudents);
-
+  const teachers = useSelector(selectAllTeachers);
+  const blogs = useSelector(selectBuckets);
   useEffect(() => {
     dispatch(fetchstudents());
+    dispatch(fetchTeachers());
+    dispatch(fetchBlogs());
     window.scroll(0, 0);
   }, [dispatch]);
 
@@ -53,7 +58,7 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold mb-2 text-blue-700">
                 Total Students
               </h3>
-              <p className="text-2xl text-blue-600">150</p>
+              <p className="text-2xl text-blue-600">{students.length}</p>
             </div>
           </div>
           <div className="p-6 bg-green-100 shadow-lg rounded-lg flex items-center">
@@ -62,7 +67,7 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold mb-2 text-green-700">
                 Total Teachers
               </h3>
-              <p className="text-2xl text-green-600">30</p>
+              <p className="text-2xl text-green-600">{teachers.length}</p>
             </div>
           </div>
           <div className="p-6 bg-purple-100 shadow-lg rounded-lg flex items-center">
@@ -71,7 +76,7 @@ const Dashboard = () => {
               <h3 className="text-lg font-semibold mb-2 text-purple-700">
                 New Blog Posts
               </h3>
-              <p className="text-2xl text-purple-600">5</p>
+              <p className="text-2xl text-purple-600">{blogs.length}</p>
             </div>
           </div>
           <div className="p-6 bg-red-100 shadow-lg rounded-lg flex items-center">
@@ -100,7 +105,7 @@ const Dashboard = () => {
       <div className="shadow-lg dashboard mt-6 p-2">
         <h3 className="font-bold text-[18px]">Total students</h3>
 
-        <div className="row filtercards">
+        <div className="row filtercards z-10">
           <div className="col">
             <h4 className="font-[700] text-[14px] mt-3">Class</h4>
             <FormControl className="w-full" size="small">

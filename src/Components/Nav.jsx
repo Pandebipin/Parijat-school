@@ -23,7 +23,10 @@ function Nav() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsAuthenticated(true);
-        if (user.email === "admin12@gmail.com") {
+        if (
+          user.email === import.meta.env.VITE_Email_key ||
+          import.meta.env.VITE_AnotherEmail_key
+        ) {
           setIsAdmin(true);
         }
       } else {

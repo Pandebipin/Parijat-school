@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Addbucket } from "../../Store/bucketSlice";
 
@@ -8,12 +8,7 @@ const AddItems = () => {
   const [desc, setdesc] = useState("");
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (blogToEdit) {
-      setTitle(blogToEdit.title);
-      setdesc(blogToEdit.desc);
-    }
-  }, [blogToEdit]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const currentDate = new Date().toISOString();
@@ -29,7 +24,7 @@ const AddItems = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg"
+      className="max-w-lg py-12 mt-[100px] mx-auto p-6 bg-white shadow-md rounded-lg"
     >
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
         Add New Item
