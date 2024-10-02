@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Blogposts() {
   const Blogs = useSelector(selectBuckets);
-
+  // here what i am trying to do is dispatching the blog to achieve data
   const dispatch = useDispatch();
 
   useEffect(() => {

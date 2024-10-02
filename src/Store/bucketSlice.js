@@ -1,11 +1,11 @@
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
-import { db } from "../firebase"; // Ensure db is properly imported and configured
+import { db } from "../firebase";
 
 const initialState = {
   bucket: [],
-  status: "idle", // Added status for loading state
+  status: "nothing here",
   error: null,
 };
 

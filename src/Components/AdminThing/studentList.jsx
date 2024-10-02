@@ -59,7 +59,7 @@ const StudentList = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value ?? "", // Ensure the value is never null or undefined
+      [name]: value ?? "",
     }));
   };
 
