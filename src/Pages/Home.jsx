@@ -89,7 +89,7 @@ function Home() {
           </div>
 
           <div className="right w-full md:w-1/2 lg:w-1/2">
-            <img className="w-full h-auto" src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3            <img className="w-full h-auto" src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png" alt="Student engaged in online classroom" />
+            <img className="w-full h-auto" src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png" alt="Student engaged in online classroom" />
           </div>
         </div>
       </div>
