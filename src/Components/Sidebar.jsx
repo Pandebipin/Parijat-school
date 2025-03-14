@@ -14,7 +14,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
 
-
+  // Close sidebar when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -34,41 +34,44 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="relative">
-      {/* Mobile Menu Button */}
+    <>
+      {/* Mobile Menu Button - Fixed on Top Left */}
       <button
-        className="lg:hidden fixed top-5 left-5 z-50 bg-gray-800 text-white p-2 rounded-md shadow-lg"
+        className="lg:hidden fixed top-4 left-4 z-50 bg-gray-900 text-white p-2 rounded-md shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <XIcon className="w-6 h-6" /> : <MenuAlt2Icon className="w-6 h-6" />}
       </button>
 
-      {/* Sidebar */}
+      {/* Sidebar Container */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out ${
           isOpen ? "w-56" : "w-16"
         } lg:w-56`}
+        style={{ height: "100vh", overflowY: "auto", zIndex: 40 }} // Prevent overlapping footer
       >
-        <div className="flex flex-col mt-10">
+        <div className="flex flex-col mt-16"> {/* Adjusted spacing */}
           {menuItems.map((item) => (
             <div
               key={item.name}
               onClick={() => {
                 navigate(item.path);
-                setIsOpen(false); // Close sidebar on mobile after navigation
+                setIsOpen(false);
               }}
-              className="flex items-center p-4 hover:bg-gray-700 cursor-pointer"
+              className="flex items-center p-4 hover:bg-gray-800 cursor-pointer transition-all"
             >
               {item.icon}
-              <span className={`ml-3 transition-opacity ${isOpen ? "opacity-100" : "opacity-0 lg:opacity-100"} lg:inline`}>
+              <span
+                className={`ml-3 transition-opacity ${isOpen ? "opacity-100" : "opacity-0 lg:opacity-100"} lg:inline`}
+              >
                 {item.name}
               </span>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
