@@ -31,19 +31,21 @@ const AdminSidebar = () => {
 
   return (
     <div className="bg-[#112143] flex flex-col lg:flex-row">
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <button onClick={toggleSidebar}>
-          {!isOpen && <MenuIcon className="icon w-8 h-8" />}
+  <div className="lg:hidden fixed top-4 left-4 z-50">
+        <button onClick={toggleSidebar} className="p-2 bg-gray-800 text-white rounded">
+          {isOpen ? <XIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
         </button>
       </div>
-      <div
-        className={`adminsidebar fixed inset-y-0 left-0 transform rounded-sm shadow-lg top-0 ${
+  <div
+        className={`fixed inset-y-0 left-0 transform transition-transform duration-300 ease-in-out bg-gray-900 text-white w-64 shadow-lg p-5 lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 transition duration-300 ease-in-out bg-gray-100 w-64`}
+        } lg:relative lg:w-72`}
       >
-        <div className="flex items-center justify-between px-4 py-4">
-          <button className="lg:hidden block" onClick={toggleSidebar}>
-            {isOpen && <XIcon className="w-6 h-6" />}
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between pb-4 border-b border-gray-700">
+          <h2 className="text-lg font-bold">Admin Panel</h2>
+          <button className="lg:hidden" onClick={toggleSidebar}>
+            <XIcon className="w-6 h-6" />
           </button>
         </div>
         <nav className="mt-0">
