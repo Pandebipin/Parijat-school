@@ -1,74 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import {
+  HomeIcon,
+  UserGroupIcon,
+  AcademicCapIcon,
+  CogIcon,
+  MenuAlt2Icon,
+  XIcon,
+} from "@heroicons/react/outline";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   const navigate = useNavigate();
-  // Optionally, if you plan to control a state from the parent, you can destructure setState from props.
-  const { setState } = props || {};
   const [isOpen, setIsOpen] = useState(false);
+  const sidebarRef = useRef(null);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
 
-  // Each link click will close the sidebar on mobile if setState function is provided
-  const handleNav = (path, value = false) => {
-    navigate(path);
-    if (setState) setState(value);
-    setIsOpen(false); // Close sidebar on mobile
-  };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const menuItems = [
+    { name: "Home", path: "/", icon: <HomeIcon className="w-6 h-6" /> },
+    { name: "All Teachers", path: "/allteachers", icon: <UserGroupIcon className="w-6 h-6" /> },
+    { name: "English", path: "/teachers/english", icon: <AcademicCapIcon className="w-6 h-6" /> },
+    { name: "Nepali", path: "/teachers/nepali", icon: <AcademicCapIcon className="w-6 h-6" /> },
+    { name: "Settings", path: "/settings", icon: <CogIcon className="w-6 h-6" /> },
+  ];
 
   return (
-    <>
-      {/* Mobile Hamburger Menu */}
-      <div className="lg:hidden flex items-center justify-between p-4 bg-gray-200">
-        <h2 className="text-gray-800 text-xl">Category</h2>
-        <button onClick={toggleSidebar}>
-          {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-        </button>
-      </div>
+    <div className="relative">
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden fixed top-5 left-5 z-50 bg-gray-800 text-white p-2 rounded-md shadow-lg"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <XIcon className="w-6 h-6" /> : <MenuAlt2Icon className="w-6 h-6" />}
+      </button>
 
-      {/* Sidebar Container */}
-    
-  <div
-    className={`fixed inset-y-0 left-0 bg-white shadow-md transition-transform duration-300 ease-in-out z-40 p-5 w-64
-      ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-      lg:relative lg:translate-x-0 lg:block lg:w-64`}
-  >
-    <h2 className="text-center text-xl text-gray-800 mb-4">Category</h2>
-    <ul className="flex flex-col gap-4 text-gray-900 font-semibold text-md list-none">
-      <li onClick={() => handleNav("/allteachers", false)} className="cursor-pointer hover:text-gray-600">
-        All
-      </li>
-      <li onClick={() => handleNav("/teachers/english", true)} className="cursor-pointer hover:text-gray-600">
-        English
-      </li>
-      <li onClick={() => handleNav("/teachers/nepali", true)} className="cursor-pointer hover:text-gray-600">
-        Nepali
-      </li>
-      <li onClick={() => handleNav("/teachers/social", true)} className="cursor-pointer hover:text-gray-600">
-        Social
-      </li>
-      <li onClick={() => handleNav("/teachers/computerscience", true)} className="cursor-pointer hover:text-gray-600">
-        Computer Science
-      </li>
-      <li onClick={() => handleNav("/teachers/science", true)} className="cursor-pointer hover:text-gray-600">
-        Science
-      </li>
-      <li onClick={() => handleNav("/teachers/economics", true)} className="cursor-pointer hover:text-gray-600">
-        Economics
-      </li>
-      <li onClick={() => handleNav("/teachers/math", true)} className="cursor-pointer hover:text-gray-600">
-        Math
-      </li>
-      <li onClick={() => handleNav("/teachers/optmath", true)} className="cursor-pointer hover:text-gray-600">
-        Optional Math
-      </li>
-    </ul>
-  </div>
-</>
-  
+      {/* Sidebar */}
+      <div
+        ref={sidebarRef}
+        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${
+          isOpen ? "w-56" : "w-16"
+        } lg:w-56`}
+      >
+        <div className="flex flex-col mt-10">
+          {menuItems.map((item) => (
+            <div
+              key={item.name}
+              onClick={() => {
+                navigate(item.path);
+                setIsOpen(false); // Close sidebar on mobile after navigation
+              }}
+              className="flex items-center p-4 hover:bg-gray-700 cursor-pointer"
+            >
+              {item.icon}
+              <span className={`ml-3 transition-opacity ${isOpen ? "opacity-100" : "opacity-0 lg:opacity-100"} lg:inline`}>
+                {item.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
