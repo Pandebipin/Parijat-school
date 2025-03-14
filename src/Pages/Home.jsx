@@ -223,42 +223,43 @@ function Home() {
 </div>
 
 
-      <div className="page4 w-full mt-8 min-h-[70vh] gap-8 p-4 flex justify-center">
-        <div className="flex flex-col-reverse w-full md:flex-row gap-4 justify-between text-center">
-          <div className="left w-full md:w-1/2 flex flex-col gap-3 p-4">
-            <div className="rotate w-[100px] h-[80px]">
-              <img className="rotate w-20 h-20" src="https://samriddhischool.edu.np/static/media/value.ad5e348aed6ffa1745bdfaca9757d58c.svg" alt="Value" />
-            </div>
-            <h1 className="text-gray-800 flex flex-start pb-2 font-bold text-2xl capitalize">{t("greetings4")}</h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values1")}
-            </h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values2")}
-            </h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values3")}
-            </h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values4")}
-            </h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values5")}
-            </h1>
-            <h1 className="text-sm tracking-wide flex items-center text-gray-600 md:text-md font-serif lg:text-lg">
-              <FaCaretRight /> {t("values6")}
-            </h1>
-          </div>
-          <div className="right flex flex-start justify-center">
-            <div className="w-full md:w-1/2 h-full">
-              <img className="w-full h-full object-cover mix-blend-multiply rounded-lg" src="https://www.swcciowa.edu/images/High_School/HighSchoolMainPage.jpg" alt="School Environment" />
-            </div>
-          </div>
-        </div>
+<div className="page4 w-full mt-8 min-h-[70vh] p-4 flex justify-center">
+  <div className="flex flex-col-reverse md:flex-row gap-6 justify-between text-center w-full">
+    
+    {/* Left Side (Text & Icons) */}
+    <div className="left w-full md:w-1/2 flex flex-col gap-4 p-4 text-start">
+      <div className="w-[80px] h-[80px] flex justify-start">
+        <img className="w-full h-full object-contain" 
+          src="https://samriddhischool.edu.np/static/media/value.ad5e348aed6ffa1745bdfaca9757d58c.svg" 
+          alt="Value" />
       </div>
 
-      <div className="page-5 w-full min-h-[40vh] gap-7 flex flex-col justify-center">
-        <Slider />
+      <h1 className="text-gray-800 font-bold text-2xl md:text-3xl capitalize">
+        {t("greetings4")}
+      </h1>
+
+      <div className="flex flex-col gap-2">
+        {[t("values1"), t("values2"), t("values3"), t("values4"), t("values5"), t("values6")].map((value, index) => (
+          <h1 key={index} className="text-sm sm:text-md md:text-lg tracking-wide flex items-center text-gray-600 font-serif">
+            <FaCaretRight className="text-blue-500 mr-2" /> {value}
+          </h1>
+        ))}
+      </div>
+    </div>
+
+    {/* Right Side (Image) */}
+    <div className="right flex justify-center w-full md:w-1/2">
+      <img className="w-full max-h-[300px] md:max-h-[400px] object-cover rounded-lg shadow-lg" 
+        src="https://www.swcciowa.edu/images/High_School/HighSchoolMainPage.jpg" 
+        alt="School Environment" />
+    </div>
+
+  </div>
+</div>
+
+
+     <div className="page-5 w-full min-h-[50vh] md:min-h[40vh] gap-7 flex flex-col justify-center p-4">
+       <Slider className="w-full max-w-[90%] mx-auto" />
       </div>
 
       <div className="page-6 relative w-full min-h-[60vh] gap-7 flex flex-col justify-center">
