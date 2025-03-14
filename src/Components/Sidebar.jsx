@@ -35,9 +35,9 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Menu Button (Fixed Position) */}
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 bg-gray-900 text-white p-2 rounded-md shadow-lg"
+        className="lg:hidden fixed top-4 left-4 z-50 bg-gray-800 text-white p-2 rounded-md shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <XIcon className="w-6 h-6" /> : <MenuAlt2Icon className="w-6 h-6" />}
@@ -46,12 +46,25 @@ const Sidebar = () => {
       {/* Sidebar Container */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-screen lg:h-full transition-all duration-300 ${
           isOpen ? "w-56" : "w-16"
-        } lg:w-56 shadow-xl`}
-        style={{ height: "100vh", overflowY: "auto", zIndex: 40 }} // Prevent overlapping footer
+        } lg:w-56 bg-gradient-to-b from-gray-900 to-gray-800 text-white shadow-2xl z-40`}
       >
-        <div className="flex flex-col mt-16"> {/* Adjusted spacing */}
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-700">
+          <h2 className={`text-xl font-semibold ${isOpen ? "block" : "hidden"}`}>
+            Menu
+          </h2>
+          <button
+            className="lg:hidden p-1 bg-gray-700 rounded-md"
+            onClick={() => setIsOpen(false)}
+          >
+            <XIcon className="w-5 h-5 text-white" />
+          </button>
+        </div>
+
+        {/* Menu Items */}
+        <div className="flex flex-col mt-4">
           {menuItems.map((item) => (
             <div
               key={item.name}
@@ -59,11 +72,13 @@ const Sidebar = () => {
                 navigate(item.path);
                 setIsOpen(false);
               }}
-              className="flex items-center p-4 hover:bg-gray-800 cursor-pointer transition-all"
+              className="flex items-center p-4 hover:bg-gray-700 cursor-pointer transition-all"
             >
               {item.icon}
               <span
-                className={`ml-3 transition-opacity ${isOpen ? "opacity-100" : "opacity-0 lg:opacity-100"} lg:inline`}
+                className={`ml-3 transition-opacity text-white ${
+                  isOpen ? "opacity-100" : "opacity-0 lg:opacity-100"
+                } lg:inline`}
               >
                 {item.name}
               </span>
