@@ -35,7 +35,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile Menu Button - Fixed on Top Left */}
+      {/* Mobile Menu Button */}
       <button
         className="lg:hidden fixed top-4 left-4 z-50 bg-gray-900 text-white p-2 rounded-md shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
@@ -48,7 +48,7 @@ const Sidebar = () => {
         ref={sidebarRef}
         className={`fixed top-0 left-0 h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out ${
           isOpen ? "w-56" : "w-16"
-        } lg:w-56`}
+        } lg:w-56 shadow-xl`}
         style={{ height: "100vh", overflowY: "auto", zIndex: 40 }} // Prevent overlapping footer
       >
         <div className="flex flex-col mt-16"> {/* Adjusted spacing */}
