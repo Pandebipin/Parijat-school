@@ -30,7 +30,7 @@ const Sidebar = (props) => {
       </div>
 
       {/* Sidebar Container */}
-     {/* Sidebar Container */}
+    
   <div
     className={`fixed inset-y-0 left-0 bg-white shadow-md transition-transform duration-300 ease-in-out z-40 p-5 w-64
       ${isOpen ? "translate-x-0" : "-translate-x-full"} 
@@ -68,7 +68,7 @@ const Sidebar = (props) => {
     </ul>
   </div>
 </>
-    </>
+  
   );
 };
 
