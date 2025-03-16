@@ -32,7 +32,7 @@ export default function App() {
         <SwiperSlide>
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
-              src="https://www.greenshaw.co.uk/_site/data/files/images/slideshow/1/746861C19A308C0CA2A2605C10B091F1.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmNR1nsUNCfcp--WWLLcYfcrvBpF9-w-g0Zw&s"
               alt=""
             />
             <p className="text-gray-800 text-lg">
@@ -44,7 +44,7 @@ export default function App() {
         <SwiperSlide>
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
-              src="https://www.greenshaw.co.uk/_site/data/files/images/slideshow/1/746861C19A308C0CA2A2605C10B091F1.jpg"
+              src="https://media.istockphoto.com/id/1189351718/photo/christmas-preschool-instant-print-transfer-activities.jpg?s=612x612&w=0&k=20&c=PHblIbxMGcOkhO0qwd9f9Og-VDRn60823juYQZDO1wk="
               alt=""
             />
             <p className="text-gray-800 text-lg">
