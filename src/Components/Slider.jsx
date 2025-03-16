@@ -32,7 +32,7 @@ export default function App() {
         <SwiperSlide>
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmNR1nsUNCfcp--WWLLcYfcrvBpF9-w-g0Zw&s"
+              src="https://media.istockphoto.com/id/1189353335/photo/preschool-christmas-activities.jpg?s=612x612&w=0&k=20&c=L-3cD8kEYb02EBUIKX5wwKBkxIS8-vg2tW6g7WRn2wQ="
               alt=""
             />
             <p className="text-gray-800 text-lg">
@@ -56,7 +56,7 @@ export default function App() {
         <SwiperSlide>
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
-              src="https://static.toiimg.com/thumb/msid-104665854,width-1280,height-720,resizemode-4/104665854.jpg"
+              src="https://media.istockphoto.com/id/1189351791/photo/preschool-christmas-activities.jpg?s=612x612&w=0&k=20&c=bhJa3xCKPusTqx5pbnvawaUVgZ2YMxeHVacS_IcbOcA="
               alt=""
             />
             <p className="text-gray-800 text-lg">
@@ -68,7 +68,7 @@ export default function App() {
         <SwiperSlide>
           <div className="bg-white w-[600px] rounded-lg shadow-lg p-6">
             <img
-              src="https://static.toiimg.com/thumb/msid-104665854,width-1280,height-720,resizemode-4/104665854.jpg"
+              src="https://media.istockphoto.com/id/1189353335/photo/preschool-christmas-activities.jpg?s=612x612&w=0&k=20&c=L-3cD8kEYb02EBUIKX5wwKBkxIS8-vg2tW6g7WRn2wQ="
               alt=""
             />
             <p className="text-gray-800 text-lg">
