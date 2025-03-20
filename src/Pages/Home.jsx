@@ -49,7 +49,7 @@ function Home() {
     tl.from(".images .img1", {
       opacity: 0,
       x: -50,
-      duration: 1,
+      duration: o.6,
     });
     tl.from(".images .img2", {
       opacity: 0,
@@ -157,7 +157,7 @@ function Home() {
 
      <div className="page3 w-full min-h-screen flex flex-col items-center p-4 bg-white">
   <ScrollTrigger onEnter={AnimateOn} onExit={AnimateOf}>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-6xl">
       <img className="rounded-lg object-cover w-full aspect-video" 
         src="https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?cs=srgb&dl=pexels-cdc-library-3992949.jpg&fm=jpg" 
         alt="Classroom" 
