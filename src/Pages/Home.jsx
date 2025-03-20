@@ -49,7 +49,7 @@ function Home() {
     tl.from(".images .img1", {
       opacity: 0,
       x: -50,
-      duration: o.6,
+      duration: 0.6,
     });
     tl.from(".images .img2", {
       opacity: 0,
