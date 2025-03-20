@@ -61,7 +61,7 @@ const Sidebar = () => {
     
       <div
         ref={sidebarRef}
-        className={`fixed lg:relative top-0 left-0 h-screen lg:h-auto transition-all duration-300 ease-in-out
+        className={`fixed lg:relative md:w-[400px] top-0 left-0 h-screen lg:h-auto transition-all duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
           w-64 sm:w-72 lg:w-full bg-gradient-to-b from-gray-900 to-gray-800 text-white shadow-2xl z-40`}
       >
@@ -93,7 +93,7 @@ const Sidebar = () => {
                 <div className={`${isActive ? "text-blue-400" : "text-white"}`}>
                   {item.icon}
                 </div>
-                <span className="ml-3 transition-opacity text-white">
+                <span className="ml-3 text-white">
                   {item.name}
                 </span>
               </div>
