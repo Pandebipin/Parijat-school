@@ -71,7 +71,7 @@ function App() {
   const UserLayout = () => (
     <>
       <Nav />
-      <div className="content mx-auto mt-4">
+      <div className="content mx-auto mb-4 mt-4">
         <Outlet />
       </div>
       <Footer />
