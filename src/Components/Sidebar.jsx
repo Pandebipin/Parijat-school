@@ -77,7 +77,7 @@ const Sidebar = () => {
         </div>
         
        
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col mt-6 md:mt-10">
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -87,7 +87,7 @@ const Sidebar = () => {
                   navigate(item.path);
                   setIsOpen(false);
                 }}
-                className={`flex items-center p-3 md:p-4 hover:bg-gray-700 cursor-pointer transition-all
+                className={`flex md:w-[400px] items-center p-3 md:p-4 hover:bg-gray-700 cursor-pointer transition-all
                   ${isActive ? "bg-gray-700" : ""}`}
               >
                 <div className={`${isActive ? "text-blue-400" : "text-white"}`}>
