@@ -43,7 +43,7 @@ const Sidebar = () => {
     <>
      
       <button
-        className="sidebar-toggle lg:hidden mt-12 fixed top-4 left-4 z-50 bg-gray-800 text-white p-2 rounded-md shadow-lg focus:outline-none"
+        className="sidebar-toggle lg:hidden mt-12 fixed top-8 left-4 z-50 bg-gray-800 text-white p-2 rounded-md shadow-lg focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle sidebar"
       >
