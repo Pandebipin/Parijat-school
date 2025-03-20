@@ -14,7 +14,7 @@ const TeacherBio = () => {
   }, [dispatch]);
   
   return (
-    <div className="flex flex-col lg:flex-row gap-4 w-full mt-16 lg:mt-9 pt-4 lg:pt-12">
+    <div className="flex flex-col lg:flex-row gap-4 w-full mt-18 lg:mt-9 pt-4 lg:pt-12">
       <div className="w-full lg:w-1/3 lg:block flex-shrink-0">
         <Sidebar />
       </div>
