@@ -29,13 +29,13 @@ const TeacherBio = () => {
         )}
         
       
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6">
           {teachers.map((teacher) => (
             <div
               key={teacher.id}
               className="bg-white p-4 md:p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-3">
+              <div className="w-26 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-3">
                 <img
                   className="w-full h-full object-cover"
                   src={teacher.url}
