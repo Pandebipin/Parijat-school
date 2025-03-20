@@ -20,7 +20,7 @@ const TeacherBio = () => {
       </div>
       
      
-      <div className="p-4 bg-gray-100 w-full min-h-screen">
+      <div className="p-4 bg-gray-100 w-full mt-7 min-h-screen">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Our Teachers</h2>
         {teachers.length === 0 && (
           <div className="flex justify-center items-center h-40">
