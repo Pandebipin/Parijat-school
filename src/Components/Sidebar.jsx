@@ -61,9 +61,9 @@ const Sidebar = () => {
     
       <div
         ref={sidebarRef}
-        className={`fixed lg:relative md:w-[400px] top-0 left-0 h-screen lg:h-auto transition-all duration-300 ease-in-out
+        className={`fixed lg:relative md:w-[400px] top-6 left-0 h-screen lg:h-auto transition-all duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-          w-64 sm:w-72 lg:w-full bg-gradient-to-b from-gray-900 to-gray-800 text-white shadow-2xl z-40`}
+          w-64 sm:w-72  bg-gradient-to-b from-gray-900 to-gray-800 text-white shadow-2xl z-40`}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-700">
           <h2 className="text-xl font-semibold">cat-G</h2>
