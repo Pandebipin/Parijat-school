@@ -13,8 +13,6 @@ import StudentList from "./Components/AdminThing/studentList.jsx";
 import AddItems from "./Components/AdminThing/Additems.jsx";
 import BlogList from "./Components/AdminThing/Bloglist.jsx";
 import Profile from "./Components/AdminThing/Profile.jsx";
-
-// Lazy-loaded components
 const Home = React.lazy(() => import("./Pages/Home.jsx"));
 const History = React.lazy(() => import("./Pages/History.jsx"));
 const Teacherbio = React.lazy(() => import("./Components/Teacherbio.jsx"));
@@ -44,10 +42,9 @@ const AdminLogin = React.lazy(() =>
 const AdminSignup = React.lazy(() =>
   import("./Components/AdminThing/Signup.jsx")
 );
-
 const App = React.lazy(() => import("./App.jsx"));
 
-// Define your routes using createBrowserRouter
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -88,7 +85,7 @@ root.render(
   <React.StrictMode>
     <Suspense
       fallback={
-        <div className="font-bold text-5xl flex justify-center">loading</div>
+        <div className="font-bold text-5xl flex justify-center h-screen item-center">loading</div>
       }
     >
       <Provider store={store}>
