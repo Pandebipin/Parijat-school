@@ -15,7 +15,7 @@ const TeacherBio = () => {
   
   return (
     <div className="flex flex-col lg:flex-row gap-4 w-full mt-18 lg:mt-9 pt-4 lg:pt-12">
-      <div className="w-full lg:w-1/3 lg:block flex-shrink-0">
+      <div className="w-full lg:w-1/3 mt-6 lg:block flex-shrink-0">
         <Sidebar />
       </div>
       
@@ -29,7 +29,7 @@ const TeacherBio = () => {
         )}
         
       
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-6 md:gap-6">
           {teachers.map((teacher) => (
             <div
               key={teacher.id}
