@@ -153,7 +153,7 @@ function Home() {
         <div className="flex justify-center items-center w-full">
           <ScrollTrigger onEnter={() => setParaOn(true)} onExit={() => setParaOn(false)}>
             {paraOn && (
-              <h1 className="para text-sm md:text-lg lg:text-xl font-md w-11/12 md:w-3/4 text-center text-gray-700">
+              <h1 className="para text-sm md:text-lg lg:text-xl font-md text-center text-gray-700">
                 {line1}
               </h1>
             )}
