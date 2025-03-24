@@ -81,19 +81,14 @@ function Home() {
       <div className="page mt-24">
         <div className="flex section-data justify-around p-6 flex-col md:flex-row gap-4 z-0">
          <div className="flex flex-col items-center text-center space-y-3">
-        <h1 className="text-gray-800 text-2xl md:text-4xl font-extrabold tracking-wide">
-         {t("greetings11")}
-        </h1>
-        <span className="text-base md:text-lg text-gray-600">{line12}</span>
-       <button 
-         onClick={() => navigate("/contact")} 
-          className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-xl px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-      >
-       {t("greetings12")}
-    </button>
-  </div>
+           <h1 className="text-black text-xl md:text-2xl font-sans font-bold">{t("greetings11")}</h1>
+            <span className="text-sm md:text-lg">{line12}</span>
+            <button onClick={() => navigate("/contact")} className="bg-blue-700 text-white font-sans w-32 rounded-lg p-2">
+              {t("greetings12")}
+            </button>
+         </div>
 
-
+  
           <div className="right w-full md:w-1/2 lg:w-1/2">
             <img className="w-full h-auto" src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png" alt="Student engaged in online classroom" />
           </div>
