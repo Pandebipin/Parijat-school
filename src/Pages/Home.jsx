@@ -80,13 +80,19 @@ function Home() {
     <main className="max-w-full">
       <div className="page mt-24">
         <div className="flex section-data justify-around p-6 flex-col md:flex-row gap-4 z-0">
-          <div className="left flex flex-col justify-center gap-4 w-full md:w-1/2 lg:w-1/3">
-            <h1 className="text-black text-xl md:text-2xl font-sans font-bold">{t("greetings11")}</h1>
-            <span className="text-sm md:text-lg">{line12}</span>
-            <button onClick={() => navigate("/contact")} className="bg-blue-700 text-white font-sans w-32 rounded-lg p-2">
-              {t("greetings12")}
-            </button>
-          </div>
+         <div className="flex flex-col items-center text-center space-y-3">
+        <h1 className="text-gray-800 text-2xl md:text-4xl font-extrabold tracking-wide">
+         {t("greetings11")}
+        </h1>
+        <span className="text-base md:text-lg text-gray-600">{line12}</span>
+       <button 
+         onClick={() => navigate("/contact")} 
+          className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-xl px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+      >
+       {t("greetings12")}
+    </button>
+  </div>
+
 
           <div className="right w-full md:w-1/2 lg:w-1/2">
             <img className="w-full h-auto" src="https://png.pngtree.com/thumb_back/fw800/background/20231009/pngtree-3d-illustration-of-a-student-engaged-in-an-online-classroom-image_13559709.png" alt="Student engaged in online classroom" />
@@ -279,7 +285,7 @@ function Home() {
       </div>
 
       <div className="page-8 w-full min-h-[60vh] gap-7 bg-white mt-6 md:mt-1 flex flex-col justify-center">
-        <div className="flex justify-between p-4 w-full">
+        <div className="flex justify-between items-center text-center p-4 w-full">
           <h1 className="text-blue-800 font-sans font-bold p-2 capitalize text-lg md:text-2xl border-b-2 border-blue-500">Recent Blogs</h1>
           <h1 className="text-gray-800 text-sm md:text-xl cursor-pointer" onClick={() => navigate("/blogposts")}>View More</h1>
         </div>
