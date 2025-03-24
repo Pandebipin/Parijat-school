@@ -80,7 +80,7 @@ function Home() {
     <main className="max-w-full">
       <div className="page mt-24">
         <div className="flex section-data justify-around p-6 flex-col md:flex-row gap-4 z-0">
-         <div className="flex flex-col items-center text-center space-y-3">
+         <div className="flex flex-col">
            <h1 className="text-black text-xl md:text-2xl font-sans font-bold">{t("greetings11")}</h1>
             <span className="text-sm md:text-lg">{line12}</span>
              <button onClick={() => navigate("/contact")} className="bg-blue-700 text-white font-sans w-32 rounded-lg p-2">
