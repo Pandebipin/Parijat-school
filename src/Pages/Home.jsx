@@ -315,7 +315,7 @@ function Home() {
           </div>
           <div className="right flex flex-start justify-center">
             <div className="imagebox">
-              <img className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg" src="https://scontent.fbwa5-2.fna.fbcdn.net/v/t39.30808-6/444747360_506396678412733_7871591592470455060_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rWAYv3DdwF4Q7kNvgEm1CXC&_nc_ht=scontent.fbwa5-2.fna&oh=00_AYDBRVJkcTaHmBD9MfrlG_ze-Gg_tcJMH9MmyRKiC57qMA&oe=667F5E6C" alt="Event" />
+              <img className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg" src="https://images.app.goo.gl/V2s7Hver1uPD6LjB8" alt="Event" />
             </div>
           </div>
         </div>
