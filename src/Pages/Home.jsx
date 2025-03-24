@@ -315,7 +315,7 @@ function Home() {
           </div>
           <div className="right flex flex-start justify-center">
             <div className="imagebox">
-              <img className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg" src="https://images.app.goo.gl/V2s7Hver1uPD6LjB8" alt="Event" />
+              <img className="h-[400px] w-[400px] object-cover mix-blend-multiply rounded-lg" src="https://w.mcauley.org.uk/images/website/public/images/headteacher-message/HT-JT-pic%201.png" alt="Event" />
             </div>
           </div>
         </div>
