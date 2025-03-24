@@ -62,7 +62,7 @@ export default function ContentModal() {
                   {elm.title}
                 </Typography>
                 <img
-                  className="w-[400px] md:w-[400px] lg:w-[400px] xl:w-[400px] h-[480px] object-cover"
+                  className="w-[350px] md:w-[400px] lg:w-[400px] xl:w-[400px] h-[300px] md:h-[480px] object-cover"
                   src={elm.url}
                   alt={elm.title}
                 />
