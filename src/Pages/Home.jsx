@@ -281,7 +281,7 @@ function Home() {
       <div className="page-8 w-full min-h-[60vh] gap-7 bg-white mt-6 md:mt-1 flex flex-col justify-center">
         <div className="flex justify-between p-4 w-full">
           <h1 className="text-blue-800 font-sans font-bold p-2 capitalize text-lg md:text-2xl border-b-2 border-blue-500">Recent Blogs</h1>
-          <h1 className="text-gray-800 md:text-xl text-md cursor-pointer" onClick={() => navigate("/blogposts")}>View More</h1>
+          <h1 className="text-gray-800 text-md md:text-xl cursor-pointer" onClick={() => navigate("/blogposts")}>View More</h1>
         </div>
         <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {Blogs.slice(0, 4).map((blog) => (
