@@ -83,9 +83,9 @@ function Home() {
          <div className="flex flex-col items-center text-center space-y-3">
            <h1 className="text-black text-xl md:text-2xl font-sans font-bold">{t("greetings11")}</h1>
             <span className="text-sm md:text-lg">{line12}</span>
-            <button onClick={() => navigate("/contact")} className="bg-blue-700 text-white font-sans w-32 rounded-lg p-2">
+             <button onClick={() => navigate("/contact")} className="bg-blue-700 text-white font-sans w-32 rounded-lg p-2">
               {t("greetings12")}
-            </button>
+             </button>
          </div>
 
   
