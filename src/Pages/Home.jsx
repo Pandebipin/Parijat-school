@@ -281,7 +281,7 @@ function Home() {
       <div className="page-8 w-full min-h-[60vh] gap-7 bg-white mt-6 md:mt-1 flex flex-col justify-center">
         <div className="flex justify-between p-4 w-full">
           <h1 className="text-blue-800 font-sans font-bold p-2 capitalize text-lg md:text-2xl border-b-2 border-blue-500">Recent Blogs</h1>
-          <h1 className="text-gray-800 text-md md:text-xl cursor-pointer" onClick={() => navigate("/blogposts")}>View More</h1>
+          <h1 className="text-gray-800 text-sm md:text-xl cursor-pointer" onClick={() => navigate("/blogposts")}>View More</h1>
         </div>
         <div className="grid p-3 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {Blogs.slice(0, 4).map((blog) => (
@@ -323,11 +323,10 @@ function Home() {
 
       <div className="page-9 md:pt-50 lg:pt-50 xl:pt-50 w-full min-h-[60vh] gap-7 flex flex-col justify-center p-4 bg-white pt-20">
         <div className="flex flex-col justify-center items-center px-4 w-full lg:w-6/12 mx-auto">
-          <h1 className="text-gray-800 font-sans font-semibold p-2 capitalize text-xl lg:text-4xl">Here are our Teachers</h1>
+          <h1 className="text-gray-800 font-sans whitespace-nowrap font-semibold p-2 capitalize text-lg md:text-xl text lg:text-4xl">Here are our Teachers</h1>
           <p className="text-md lg:text-lg leading-relaxed m-4 text-blueGray-500">
             "According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDC lead scientist, puts the potentially record
-            <span className="flex justify-center items-center"> maximum and nobody is hell."
-            </span>
+           
           </p>
           <h1 className="text-gray-700 text-lg cursor-pointer" onClick={() => navigate("/allteachers")}>View More</h1>
         </div>
